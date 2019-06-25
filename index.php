@@ -62,11 +62,13 @@
         <span class="mdl-layout-title">
           <!-- <img class="android-logo-image" src="images/android-logo-white.png"> -->
         </span>
+          <form action="catalogo.php" method="POST">
         <nav class="mdl-navigation">
         <span class="mdl-navigation__link" href="">MUEBLES</span>
-          <a class="mdl-navigation__link" href="">Salas</a>
-          <a class="mdl-navigation__link" href="">Comedores</a>
-          <a class="mdl-navigation__link" href="">Otros</a>
+<!-- ?php $catalogo1 = "Salas";?>-->
+         <?php $catalogo1 = "Salas";?> <a class="mdl-navigation__link" href="catalogo.php?catalogo1=<?php echo $catalogo1 ?>">Salas</a>
+         <?php $catalogo1 = "Comedores";?> <a class="mdl-navigation__link" href="catalogo.php?catalogo1=<?php echo $catalogo1 ?>">Comedores</a>
+         <?php $catalogo1 = "Otros";?> <a class="mdl-navigation__link" href="catalogo.php?catalogo1=<?php echo $catalogo1 ?>">Otros</a>
         <span class="mdl-navigation__link" href="">Accesorios</span>    
           <a class="mdl-navigation__link" href=""></a>
           <a class="mdl-navigation__link" href=""></a>
@@ -74,6 +76,7 @@
           <a class="mdl-navigation__link" href=""></a>
           <a class="mdl-navigation__link" href=""></a>
           <div class="android-drawer-separator"></div>
+            
           <!-- <span class="mdl-navigation__link" href="">Versiones</span>
           <a class="mdl-navigation__link" href="">Lollipop 5.0</a>
           <a class="mdl-navigation__link" href="">KitKat 4.4</a>
@@ -91,6 +94,7 @@
           <a class="mdl-navigation__link" href="">Android SDK</a> -->
             
         </nav>
+        </form>
       </div>
 
       <div class="android-content mdl-layout__content">
