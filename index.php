@@ -69,10 +69,10 @@
          <?php $catalogo1 = "Salas";?> <a class="mdl-navigation__link" href="catalogo.php?catalogo1=<?php echo $catalogo1 ?>">Salas</a>
          <?php $catalogo1 = "Comedores";?> <a class="mdl-navigation__link" href="catalogo.php?catalogo1=<?php echo $catalogo1 ?>">Comedores</a>
          <?php $catalogo1 = "Otros";?> <a class="mdl-navigation__link" href="catalogo.php?catalogo1=<?php echo $catalogo1 ?>">Otros</a>
-        <span class="mdl-navigation__link" href="">Accesorios</span>    
+        <span class="mdl-navigation__link" href="">ACCESORIOS</span>    
           <a class="mdl-navigation__link" href=""></a>
           <a class="mdl-navigation__link" href=""></a>
-        <span class="mdl-navigation__link" href="">Consumibles</span>    
+        <span class="mdl-navigation__link" href="">CONSUMIBLES</span>    
           <a class="mdl-navigation__link" href=""></a>
           <a class="mdl-navigation__link" href=""></a>
           <div class="android-drawer-separator"></div>
