@@ -5,6 +5,7 @@
 //Obterner las variable
 
 $catalogo1=($_GET['catalogo1']);
+$nombre_seccion=$catalogo1;
 
 // Mostar las variables
 ?>
@@ -101,18 +102,20 @@ $catalogo1=($_GET['catalogo1']);
         <span class="mdl-layout-title">
           <!-- <img class="android-logo-image" src="images/android-logo-white.png"> -->
         </span>
-        <nav class="mdl-navigation">
+ <nav class="mdl-navigation">
         <span class="mdl-navigation__link" href="">MUEBLES</span>
-          <a class="mdl-navigation__link" href="">Salas</a>
-          <a class="mdl-navigation__link" href="">Comedores</a>
-          <a class="mdl-navigation__link" href="">Otros</a>
-        <span class="mdl-navigation__link" href="">Accesorios</span>    
+<!-- ?php $catalogo1 = "Salas";?>-->
+         <?php $catalogo1 = "Salas";?> <a class="mdl-navigation__link" href="catalogo.php?catalogo1=<?php echo $catalogo1 ?>">Salas</a>
+         <?php $catalogo1 = "Comedores";?> <a class="mdl-navigation__link" href="catalogo.php?catalogo1=<?php echo $catalogo1 ?>">Comedores</a>
+         <?php $catalogo1 = "Otros";?> <a class="mdl-navigation__link" href="catalogo.php?catalogo1=<?php echo $catalogo1 ?>">Otros</a>
+        <span class="mdl-navigation__link" href="">ACCESORIOS</span>    
           <a class="mdl-navigation__link" href=""></a>
           <a class="mdl-navigation__link" href=""></a>
-        <span class="mdl-navigation__link" href="">Consumibles</span>    
+        <span class="mdl-navigation__link" href="">CONSUMIBLES</span>    
           <a class="mdl-navigation__link" href=""></a>
           <a class="mdl-navigation__link" href=""></a>
           <div class="android-drawer-separator"></div>
+            
           <!-- <span class="mdl-navigation__link" href="">Versiones</span>
           <a class="mdl-navigation__link" href="">Lollipop 5.0</a>
           <a class="mdl-navigation__link" href="">KitKat 4.4</a>
@@ -211,7 +214,7 @@ $catalogo1=($_GET['catalogo1']);
           <div class="android-customized-section-image"></div>
         </div>-->
         <div class="android-more-section">
-          <div class="android-section-title mdl-typography--display-1-color-contrast"><?php echo $catalogo1; ?></div>
+          <div class="android-section-title mdl-typography--display-1-color-contrast"><?php echo $nombre_seccion; ?></div>
           <div class="android-card-container mdl-grid">
             <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
               <div class="mdl-card__media">
