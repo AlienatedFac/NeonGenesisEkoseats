@@ -23,6 +23,27 @@
 
     
   </head>
+       <!-- WhatsHelp.io widget -->
+<script type="text/javascript">
+    (function () {
+        var options = {
+            
+            facebook: "324124578524175", // Facebook page ID
+            whatsapp: "9984250627", // WhatsApp number
+            telegram: "9984250627", // WhatsApp number
+            email: "ekoseats@gmail.com", // Email
+            call: "9984250627", // Call phone number
+            call_to_action: "Contactanos", // Call to action
+            button_color: "#008f39", // Color of button
+            position: "right", // Position may be 'right' or 'left'
+            order: "facebook,whatsapp", // Order of buttons
+        };
+        var proto = document.location.protocol, host = "whatshelp.io", url = proto + "//static." + host;
+        var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
+        s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
+        var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+    })();
+</script>
   <body>
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
 <!--Encabezado-->
