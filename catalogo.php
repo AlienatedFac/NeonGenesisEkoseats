@@ -14,7 +14,7 @@ $nombre_seccion=$catalogo1;
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Ejemplo de Material Design">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><?php echo $catalogo1; ?></title>
+    <title>Ekoseats-<?php echo $catalogo1; ?></title>
 
     <!-- Estilos -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=es" rel="stylesheet">
@@ -23,7 +23,27 @@ $nombre_seccion=$catalogo1;
     <link rel="stylesheet" href="css/styles.css">
     
   </head>
-    
+       <!-- WhatsHelp.io widget -->
+<script type="text/javascript">
+    (function () {
+        var options = {
+            
+            facebook: "324124578524175", // Facebook page ID
+            whatsapp: "9984250627", // WhatsApp number
+            telegram: "9984250627", // WhatsApp number
+            email: "ekoseats@gmail.com", // Email
+            call: "9984250627", // Call phone number
+            call_to_action: "Contactanos", // Call to action
+            button_color: "#008f39", // Color of button
+            position: "right", // Position may be 'right' or 'left'
+            order: "facebook,whatsapp", // Order of buttons
+        };
+        var proto = document.location.protocol, host = "whatshelp.io", url = proto + "//static." + host;
+        var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
+        s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
+        var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+    })();
+</script>
 <style>
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -92,8 +112,8 @@ $nombre_seccion=$catalogo1;
             <li disabled class="mdl-menu__item">4.3 Jelly Bean</li>
             <li class="mdl-menu__item">Historia de Android</li>
           </ul> -->
-          <span class="android-mobile-title mdl-layout-title">
-            <img class="android-logo-image" src="images/android-logo.png">
+          <span class="android-mobile-title mdl-layout-title" style="color: green">
+           <!--    <img class="android-logo-image" src="images/android-logo.png">-->  Ekoseats
           </span>
         </div>
       </div>
@@ -115,6 +135,13 @@ $nombre_seccion=$catalogo1;
           <a class="mdl-navigation__link" href=""></a>
           <a class="mdl-navigation__link" href=""></a>
           <div class="android-drawer-separator"></div>
+     <span class="mdl-navigation__link" href="">Recursos</span>
+          <a class="mdl-navigation__link" href="">Blog Oficial</a>
+          <a class="mdl-navigation__link" href="">Ekoseats en Google+</a>
+          <a class="mdl-navigation__link" href="">Ekoseats en Twitter</a>
+          <a class="mdl-navigation__link" href="">Ekoseats en Facebook</a>
+     
+          <div class="android-drawer-separator"></div>
             
           <!-- <span class="mdl-navigation__link" href="">Versiones</span>
           <a class="mdl-navigation__link" href="">Lollipop 5.0</a>
@@ -122,16 +149,20 @@ $nombre_seccion=$catalogo1;
           <a class="mdl-navigation__link" href="">Jelly Bean 4.3</a>
           <a class="mdl-navigation__link" href="">Historia de Android</a>
           <div class="android-drawer-separator"></div>
-          <span class="mdl-navigation__link" href="">Recursos</span>
-          <a class="mdl-navigation__link" href="">Blog Oficial</a>
-          <a class="mdl-navigation__link" href="">Android en Google+</a>
-          <a class="mdl-navigation__link" href="">Android en Twitter</a>
-          <div class="android-drawer-separator"></div>
+          
           <span class="mdl-navigation__link" href="">Para Desarrolladores</span>
           <a class="mdl-navigation__link" href="">Recursos para desarrollo de Apps</a>
           <a class="mdl-navigation__link" href="">Android Proyecto Open Source</a>
           <a class="mdl-navigation__link" href="">Android SDK</a> -->
+     
             
+        </nav>
+        <nav class="mobile mdl-navigation">
+        <span class="mobile mdl-navigation__link" href="">MUEBLES</span>
+<!-- ?php $catalogo1 = "Salas";?>-->
+         <?php $catalogo1 = "Salas";?> <a class="mobile mdl-navigation__link" href="catalogo.php?catalogo1=<?php echo $catalogo1 ?>">Salas</a>
+         <?php $catalogo1 = "Comedores";?> <a class="mobile mdl-navigation__link" href="catalogo.php?catalogo1=<?php echo $catalogo1 ?>">Comedores</a>
+         <?php $catalogo1 = "Otros";?> <a class="mobile mdl-navigation__link" href="catalogo.php?catalogo1=<?php echo $catalogo1 ?>">Otros</a>        
         </nav>
       </div>
 
