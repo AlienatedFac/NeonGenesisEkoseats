@@ -153,7 +153,7 @@ $nombre_seccion=$catalogo1;
         <div class="android-screen-section mdl-typography--text-center">
           <a name="screens"></a>
           <div class="mdl-typography--display-1-color-contrast">Productos de todos los tamaños, materiales y colores.</div>
-          <!--<div class="android-screens">
+          <div class="android-screens">
             <div class="android-wear android-screen">
               <a class="android-image-link" href="">
                 <img class="android-screen-image" src="images/wear-silver-on.png">

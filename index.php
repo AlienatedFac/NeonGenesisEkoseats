@@ -8,6 +8,14 @@
     <title>EkoSeats</title>
 
     <!-- Estilos -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=es" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/material.min.css">
@@ -21,7 +29,7 @@
       <div class="android-header mdl-layout__header mdl-layout__header--waterfall">
         <div class="mdl-layout__header-row">
           <span class="android-title mdl-layout-title" style="color: green">
-        <!--    <img class="android-logo-image" src="images/android-logo.png">-->Ekoseats
+        <!--    <img class="android-logo-image" src="images/android-logo.png">-->EkoSeats
           </span>
           <!-- Agregamos un espacio entre el logo de y el menú -->
           <div class="android-header-spacer mdl-layout-spacer"></div>
@@ -36,11 +44,11 @@
           <!-- Menú -->
           <div class="android-navigation-container">
             <nav class="android-navigation mdl-navigation">
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Home</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Contactanos</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="index.php">Home</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Carrito</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Login</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="login.php">Login</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Catalogo</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="quienes_somos.php">Preguntas Frecuentes</a>
             </nav>
           </div>
           <!-- <button class="android-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="more-button">
@@ -100,10 +108,10 @@
       <div class="android-content mdl-layout__content">
         <a name="top"></a>
         <div class="android-be-together-section mdl-typography--text-center">
-          <div class="android-font android-slogan">Imagina el mundo reciclado xdxd</div>
-          <div class="android-font android-sub-slogan">Por un mundo mejor, y un futuro mejor</div>
+          <div class="android-font android-slogan">Por un mundo mejor.</div>
+          <div class="android-font android-sub-slogan">Por las generaciones futuras.</div>
           <div class="android-font android-create-character">
-            <a href="">Crea un perfil para empezar a navegar</a>
+            <a href=""></a>
           </div>
 
           <a href="#screens">
@@ -154,11 +162,11 @@
             <div class="android-wear-band-text">
               <div class="mdl-typography--display-2 mdl-typography--font-thin">Productos de la mejor calidad.</div>
               <p class="mdl-typography--headline mdl-typography--font-thin">
-                Android funciona a la perfección con sus aplicaciones favoritas como Google Maps, Calendar y YouTube.
+                Busca lo que te guste y necesites.
               </p>
               <p>
                 <a class="mdl-typography--font-regular mdl-typography--text-uppercase android-alt-link" href="">
-                  Mira las novedades en la Play Store&nbsp;<i class="material-icons">chevron_right</i>
+                  Mira las novedades que tenemos&nbsp;<i class="material-icons">chevron_right</i>
                 </a>
               </p>
             </div>
@@ -166,11 +174,11 @@
         </div>
         <div class="android-customized-section">
           <div class="android-customized-section-text">
-            <div class="mdl-typography--font-light mdl-typography--display-1-color-contrast">Persnonalizable para tí, por tí</div>
+            <div class="mdl-typography--font-light mdl-typography--display-1-color-contrast">La forma de buscar y comprar mas facil para ti.</div>
             <p class="mdl-typography--font-light">
               Ponga las cosas que usted desee a la derecha en la pantalla principal: las últimas noticias, el clima o una galeria con sus fotos recientes.
               <br>
-              <a href="" class="android-link mdl-typography--font-light">Personaliza tu Teléfono</a>
+              <a href="" class="android-link mdl-typography--font-light">Busca productos de interes.</a>
             </p>
           </div>
           <div class="android-customized-section-image"></div>
@@ -189,13 +197,12 @@
                 <span class="mdl-typography--font-light mdl-typography--subhead">Descripcion</span>
               </div>
               <div class="mdl-card__actions">
-                 <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="">
-                    Carrito, ver mas
-                   <i class="material-icons">chevron_right</i>
-                 </a>
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                    Launch demo modal
+                  </button>
               </div>
             </div>
-
+        
             <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
               <div class="mdl-card__media">
                 <img src="images/more-from-4.png">
@@ -288,3 +295,24 @@
 
   </body>
 </html>
+
+<!-- tu pop up hijo de tu puta madre -->
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    hola bb
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
