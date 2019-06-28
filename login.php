@@ -34,7 +34,7 @@
         var options = {
             
             facebook: "324124578524175", // Facebook page ID
-            whatsapp: "9984250627", // WhatsApp number
+            whatsapp: "+5219984250627", // WhatsApp number
             telegram: "9984250627", // WhatsApp number
             email: "ekoseats@gmail.com", // Email
             call: "9984250627", // Call phone number
