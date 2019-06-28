@@ -385,9 +385,7 @@ a img{
   }
 
 .android-customized-section-image {
-  background: url('../images/3r-min.jpg') center top no-repeat;
-  background-size: cover;
-  height: 400px;
+  background: url('../images/3r-min.jpg');
 }
 
 .android-more-section {

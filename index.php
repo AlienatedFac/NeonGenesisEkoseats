@@ -8,6 +8,10 @@
     <title>EkoSeats</title>
 
     <!-- Estilos -->
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.slim.js"
+    integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI="
+    crossorigin="anonymous"></script>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -220,12 +224,13 @@
                 <span class="mdl-typography--font-light mdl-typography--subhead">Descripcion</span>
               </div>
               <div class="mdl-card__actions">
-                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-                    Launch demo modal
-                  </button>
+                  <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="https://androidify.com" target="_blank">
+                   Ver mas
+                   <i class="material-icons">chevron_right</i>
+                 </a>
               </div>
             </div>
-        
+
             <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
               <div class="mdl-card__media">
                 <img src="images/more-from-4.png">
@@ -238,7 +243,7 @@
               </div>
               <div class="mdl-card__actions">
                  <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="https://androidify.com" target="_blank">
-                   Carrito, ver mas
+                   Ver mas
                    <i class="material-icons">chevron_right</i>
                  </a>
               </div>
@@ -256,7 +261,7 @@
               </div>
               <div class="mdl-card__actions">
                  <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="">
-                   Carrito, ver mas
+                   Ver mas
                    <i class="material-icons">chevron_right</i>
                  </a>
               </div>
@@ -274,7 +279,7 @@
               </div>
               <div class="mdl-card__actions">
                  <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="">
-                   Carrito, ver mas
+                   Ver mas
                    <i class="material-icons">chevron_right</i>
                  </a>
               </div>
@@ -318,24 +323,3 @@
 
   </body>
 </html>
-
-<!-- tu pop up hijo de tu puta madre -->
-            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    hola bb
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                  </div>
-                </div>
-              </div>
-            </div>
