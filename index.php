@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Ejemplo de Material Design">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>EkoSeats</title>
+    <title>Login</title>
 
     <!-- Estilos -->
     <script
