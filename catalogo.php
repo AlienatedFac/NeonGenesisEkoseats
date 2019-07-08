@@ -13,7 +13,7 @@ $stock="";
 $precio="";
 $tipo="";
 $usuario="";
-$conexion = mysqli_connect("localhost", "root", "", "ekoseat_bdd");
+
 
 // Mostar las variables
 ?>
@@ -273,9 +273,10 @@ $conexion = mysqli_connect("localhost", "root", "", "ekoseat_bdd");
               </div>
             </div>
               <?php
+$conexion = mysqli_connect("localhost", "root", "", "ekoseat_bdd");
                for($contador=1;$contador<5;$contador++)
                   {
-$consulta =$conexion->query("SELECT * from productos WHERE id= $contador AND tipo_producto= $nombre_seccion");
+$consulta =$conexion->query("SELECT * from productos WHERE id_producto= $contador AND tipo_producto= $nombre_seccion");
 if($resultado = mysqli_fetch_array($consulta)){
    //Guardo los datos de la BD en las variables de php
    $imagen = $resultado["id_producto"];
@@ -283,6 +284,7 @@ if($resultado = mysqli_fetch_array($consulta)){
    $descripcion = $resultado["descripcion_producto"];
    $stock = $resultado["stock_producto"];
    $precio = $resultado["precio_producto"];
+   $ruta = $resultado["imagenes"];
    $tipo= $resultado["tipo_producto"];
    $usuario= $resultado["id_usuario"];
 }
