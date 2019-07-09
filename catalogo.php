@@ -11,8 +11,15 @@ $nombre="";
 $descripcion="";
 $stock="";
 $precio="";
-$tipo="";
 $usuario="";
+    
+if ($nombre_seccion == "Salas") {
+    $tipo=1;
+} elseif ($nombre_seccion == "Comedores") {
+    $tipo=2;
+} elseif ($nombre_seccion=="Otros") {
+    $tipo=3;
+}
 
 
 // Mostar las variables
@@ -276,7 +283,7 @@ $usuario="";
 $conexion = mysqli_connect("localhost", "root", "", "ekoseat_bdd");
                for($contador=1;$contador<5;$contador++)
                   {
-$consulta =$conexion->query("SELECT * from productos WHERE id_producto= $contador AND tipo_producto= $nombre_seccion");
+$consulta =$conexion->query("SELECT * from productos WHERE id_producto= $contador AND tipo_producto=$tipo");
 if($resultado = mysqli_fetch_array($consulta)){
    //Guardo los datos de la BD en las variables de php
    $imagen = $resultado["id_producto"];

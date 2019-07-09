@@ -211,7 +211,9 @@
           <div class="android-customized-section-image"></div>
         </div>
         <div class="android-more-section">
-          <div class="android-section-title mdl-typography--display-1-color-contrast">Mas de EkoSeats</div>
+            
+     <!--Aqui Iran las recientes de Ekoseats-->
+          <div class="android-section-title mdl-typography--display-1-color-contrast">Más Recientes</div>
           <div class="android-card-container mdl-grid">
             <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
               <div class="mdl-card__media">
