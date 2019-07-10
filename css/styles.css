@@ -315,7 +315,7 @@ a img{
 
 .android-wear-section {
   position: relative;
-  background: url('../images/rsz_reciclaje.jpg') center top no-repeat;
+/*background: url('../images/rsz_reciclaje.jpg') center top no-repeat;*/
   background-size: cover;
   height: 800px;
 }
