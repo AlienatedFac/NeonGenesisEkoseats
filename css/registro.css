@@ -1,0 +1,12 @@
+#main_container{
+
+}
+#tarjeta{
+	width: 70%;
+	left: 15%;
+	margin-top: 5%;
+}
+.login_btn {
+	background: #89d233 !important;
+	color: white !important;
+}

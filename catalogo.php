@@ -1,27 +1,23 @@
 <!doctype html>
 <html lang="es">
     <?php
-
-//Obterner las variable
-
-$catalogo1=($_GET['catalogo1']);
-$nombre_seccion=$catalogo1;
-$imagen="";
-$nombre="";
-$descripcion="";
-$stock="";
-$precio="";
-$usuario="";
-    
-if ($nombre_seccion == "Salas") {
-    $tipo=1;
-} elseif ($nombre_seccion == "Comedores") {
-    $tipo=2;
-} elseif ($nombre_seccion=="Otros") {
-    $tipo=3;
-}
-
-
+      //Obterner las variable
+      $catalogo1=($_GET['catalogo1']);
+      $nombre_seccion=$catalogo1;
+      $imagen="";
+      $nombre="";
+      $descripcion="";
+      $stock="";
+      $precio="";
+      $usuario="";
+          
+      if ($nombre_seccion == "Salas") {
+          $tipo=1;
+      } elseif ($nombre_seccion == "Comedores") {
+          $tipo=2;
+      } elseif ($nombre_seccion=="Otros") {
+          $tipo=3;
+      }
 // Mostar las variables
 ?>
   <head>
@@ -112,10 +108,10 @@ if ($nombre_seccion == "Salas") {
           <div class="android-navigation-container">
             <nav class="android-navigation mdl-navigation">
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="index.php">Home</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Contactanos</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Carrito</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Login</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Catalogo</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="carrito.php">Carrito</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="login.php">Login</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="catalogo.php">Catalogo</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="quienes_somos.php">Preguntas Frecuentes</a>
             </nav>
           </div>
           <!-- <button class="android-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="more-button">
@@ -174,91 +170,13 @@ if ($nombre_seccion == "Salas") {
         </nav>
         <nav class="mobile mdl-navigation">
         <span class="mobile mdl-navigation__link" href="">MUEBLES</span>
-<!-- ?php $catalogo1 = "Salas";?>-->
+        <!-- ?php $catalogo1 = "Salas";?>-->
          <?php $catalogo1 = "Salas";?> <a class="mobile mdl-navigation__link" href="catalogo.php?catalogo1=<?php echo $catalogo1 ?>">Salas</a>
          <?php $catalogo1 = "Comedores";?> <a class="mobile mdl-navigation__link" href="catalogo.php?catalogo1=<?php echo $catalogo1 ?>">Comedores</a>
          <?php $catalogo1 = "Otros";?> <a class="mobile mdl-navigation__link" href="catalogo.php?catalogo1=<?php echo $catalogo1 ?>">Otros</a>        
         </nav>
       </div>
-
       <div class="android-content mdl-layout__content">
-       <!-- <a name="top"></a>
-        <div class="android-be-together-section mdl-typography--text-center">
-          <div class="android-font android-slogan"></div>
-          <div class="android-font android-sub-slogan">Por un mundo mejor, y un futuro mejor</div>
-          <div class="android-font android-create-character">
-            <a href="">Crea un perfil para empezar a navegar</a>
-          </div>
-
-          <a href="#screens">
-            <button class="android-fab mdl-button mdl-button--colored mdl-js-button mdl-button--fab mdl-js-ripple-effect">
-              <i class="material-icons">expand_more</i>
-            </button>
-          </a>
-        </div>
-        <div class="android-screen-section mdl-typography--text-center">
-          <a name="screens"></a>
-          <div class="mdl-typography--display-1-color-contrast">Productos de todos los tamaños, materiales y colores.</div>
-          <div class="android-screens">
-            <div class="android-wear android-screen">
-              <a class="android-image-link" href="">
-                <img class="android-screen-image" src="images/wear-silver-on.png">
-                <img class="android-screen-image" src="images/wear-black-on.png">
-              </a>
-              <a class="android-link mdl-typography--font-regular mdl-typography--text-uppercase" href="">Android Wear</a>
-            </div>
-            <div class="android-phone android-screen">
-              <a class="android-image-link" href="">
-                <img class="android-screen-image" src="images/nexus6-on.jpg">
-              </a>
-              <a class="android-link mdl-typography--font-regular mdl-typography--text-uppercase" href="">Móviles</a>
-            </div>
-            <div class="android-tablet android-screen">
-              <a class="android-image-link" href="">
-                <img class="android-screen-image" src="images/nexus9-on.jpg">
-              </a>
-              <a class="android-link mdl-typography--font-regular mdl-typography--text-uppercase" href="">Tablets</a>
-            </div>
-            <div class="android-tv android-screen">
-              <a class="android-image-link" href="">
-                <img class="android-screen-image" src="images/tv-on.jpg">
-              </a>
-              <a class="android-link mdl-typography--font-regular mdl-typography--text-uppercase" href="">Android TV</a>
-            </div>
-            <div class="android-auto android-screen">
-              <a class="android-image-link" href="">
-                <img class="android-screen-image" src="images/auto-on.jpg">
-              </a>
-              <a class="android-link mdl-typography--font-regular mdl-typography--text-uppercase mdl-typography--text-left" href="">Muy Pronto: Android Auto</a>
-            </div>
-          </div>
-        </div>
-        <div class="android-wear-section">
-          <div class="android-wear-band">
-            <div class="android-wear-band-text">
-              <div class="mdl-typography--display-2 mdl-typography--font-thin">Productos de la mejor calidad.</div>
-              <p class="mdl-typography--headline mdl-typography--font-thin">
-                Android funciona a la perfección con sus aplicaciones favoritas como Google Maps, Calendar y YouTube.
-              </p>
-              <p>
-                <a class="mdl-typography--font-regular mdl-typography--text-uppercase android-alt-link" href="">
-                  Mira las novedades en la Play Store&nbsp;<i class="material-icons">chevron_right</i>
-                </a>
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="android-customized-section">
-          <div class="android-customized-section-text">
-            <div class="mdl-typography--font-light mdl-typography--display-1-color-contrast">Personalizable para tí, por tí</div>
-            <p class="mdl-typography--font-light">
-              Ponga las cosas que usted desee a la derecha en la pantalla principal: las últimas noticias, el clima o una galeria con sus fotos recientes.
-              <br>
-              <a href="" class="android-link mdl-typography--font-light">Personaliza tu Teléfono</a>
-            </p>
-          </div>
-          <div class="android-customized-section-image"></div>
-        </div>-->
         <div class="android-more-section">
           <div class="android-section-title mdl-typography--display-1-color-contrast"><?php echo $nombre_seccion; ?></div>
           <div class="android-card-container mdl-grid">
@@ -280,52 +198,48 @@ if ($nombre_seccion == "Salas") {
               </div>
             </div>
               <?php
-$conexion = mysqli_connect("localhost", "root", "", "ekoseat_bdd");
-               for($contador=1;$contador<5;$contador++)
-                  {
-$consulta =$conexion->query("SELECT * from productos WHERE id_producto= $contador AND tipo_producto=$tipo");
-if($resultado = mysqli_fetch_array($consulta)){
-   //Guardo los datos de la BD en las variables de php
-   $imagen = $resultado["id_producto"];
-   $nombre = $resultado["nombre_producto"];
-   $descripcion = $resultado["descripcion_producto"];
-   $stock = $resultado["stock_producto"];
-   $precio = $resultado["precio_producto"];
-   $ruta = $resultado["imagenes"];
-   $tipo= $resultado["tipo_producto"];
-   $usuario= $resultado["id_usuario"];
-}
-if($imagen!="")
-{ 
-$valor=$imagen;
-echo"
-<div class='mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp'>
-<div class='mdl-card__media'>
-<img src='images/$nombre_seccion/$imagen.jpg'>
-</div>
-<div class='mdl-card__title'>
-<h4 class='mdl-card__title-text'>$nombre</h4>
-</div>
-<div class='mdl-card__supporting-text'>
-</div>
-";
-echo"<div class='mdl-card__actions'>
-<a class='android-link mdl-button mdl-js-button mdl-typography--text-uppercase' href='detalles.php?valor=$valor' >
-Carrito, ver mas
-<i class='material-icons'>chevron_right</i>
-</a>
-</div>
-</div>            
-";
-
-    $imagen = "";
-    $nombre = "";
-    $descripcion = "";
-    $precio = "";
-} 
-}      
+                  $conexion = mysqli_connect("localhost", "root", "", "ekoseat_bdd");
+                    for($contador=1;$contador<5;$contador++){
+                        $consulta =$conexion->query("SELECT * from productos WHERE id_producto= $contador AND tipo_producto=$tipo");
+                        if($resultado = mysqli_fetch_array($consulta)){
+                           //Guardo los datos de la BD en las variables de php
+                           $imagen = $resultado["id_producto"];
+                           $nombre = $resultado["nombre_producto"];
+                           $descripcion = $resultado["descripcion_producto"];
+                           $stock = $resultado["stock_producto"];
+                           $precio = $resultado["precio_producto"];
+                           $ruta = $resultado["imagenes"];
+                           $tipo= $resultado["tipo_producto"];
+                           $usuario= $resultado["id_usuario"];
+                        }
+                        if($imagen!="")
+                        { 
+                          $valor=$imagen;
+                        ?>
+                          <div class='mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp'>
+                            <div class='mdl-card__media'>
+                              <img src='images/$nombre_seccion/$imagen.jpg'>
+                            </div>
+                            <div class='mdl-card__title'>
+                              <h4 class='mdl-card__title-text'>$nombre</h4>
+                            </div>
+                            <div class='mdl-card__supporting-text'>
+                            </div>
+                            <div class='mdl-card__actions'>
+                              <a class='android-link mdl-button mdl-js-button mdl-typography--text-uppercase' href='detalles.php?valor=$valor' >Carrito, ver mas
+                                <i class='material-icons'>chevron_right</i>
+                              </a>
+                            </div>
+                          </div>            
+                        <?php
+                            $imagen = "";
+                            $nombre = "";
+                            $descripcion = "";
+                            $precio = "";
+                        } 
+                  }      
               
-?>
+                ?>
 
             <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
               <div class="mdl-card__media">
@@ -343,13 +257,7 @@ Carrito, ver mas
                    <i class="material-icons">chevron_right</i>
                  </a>
               </div>
-            </div>
-
-            
-              
-              
-              
-                    
+            </div>       
           </div>
         </div>
 

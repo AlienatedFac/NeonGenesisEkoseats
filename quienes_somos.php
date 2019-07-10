@@ -8,22 +8,26 @@
     <title>¿Quienes somos?</title>
 
     <!-- Estilos -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=es" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="css/material.min.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.slim.js"
+    integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI="
+    crossorigin="anonymous"></script>
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=es" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/material.min.css">
+    <link rel="stylesheet" href="css/styles.css">
     
   </head>
-       <!-- WhatsHelp.io widget -->
+   <!-- WhatsHelp.io widget -->
 <script type="text/javascript">
     (function () {
         var options = {
@@ -44,6 +48,13 @@
         var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
     })();
 </script>
+<style>
+  body{
+    background: #eee7e5 !important;
+  }
+</style>
+<!-- /WhatsHelp.io widget -->
+<!-- /WhatsHelp.io widget -->
   <body>
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
 <!--Encabezado-->
@@ -67,14 +78,13 @@
           <div class="android-navigation-container">
             <nav class="android-navigation mdl-navigation">
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="index.php">Home</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Carrito</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Catalogo</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Login</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="carrito.php">Carrito</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="login.php">Login</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="catalogo.php">Catalogo</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="quienes_somos.php">Preguntas Frecuentes</a>
             </nav>
           </div>
-          <span class="android-mobile-title mdl-layout-title">
-            <img class="android-logo-image" src="images/android-logo.png">
+          <span class="android-mobile-title mdl-layout-title">Ekoseats
           </span>
         </div>
       </div>
@@ -86,7 +96,6 @@
           <form action="catalogo.php" method="POST">
         <nav class="mdl-navigation">
         <span class="mdl-navigation__link" href="">MUEBLES</span>
-<!-- ?php $catalogo1 = "Salas";?>-->
          <?php $catalogo1 = "Salas";?> <a class="mdl-navigation__link" href="catalogo.php?catalogo1=<?php echo $catalogo1 ?>">Salas</a>
          <?php $catalogo1 = "Comedores";?> <a class="mdl-navigation__link" href="catalogo.php?catalogo1=<?php echo $catalogo1 ?>">Comedores</a>
          <?php $catalogo1 = "Otros";?> <a class="mdl-navigation__link" href="catalogo.php?catalogo1=<?php echo $catalogo1 ?>">Otros</a>
@@ -117,59 +126,19 @@
         </nav>
         </form>
       </div>
-
       <div class="android-content mdl-layout__content">
         <a name="top"></a>
-        
-        <div class="mdl-typography--text-center">
-          <div class="android-font android-slogan">EkoSeats</div>
-          <div class="android-font android-sub-slogan">Preguntas Frecuentes</div>
+        <div class="android-be-together-section mdl-typography--text-center" style="height: 100% !important;background: url('images/fondo_weno.png') center 30% no-repeat;">
+          <div class="android-font android-slogan">Conocenos.</div>
+          <div class="android-font android-sub-slogan">Por las generaciones futuras.</div>
         </div>
-
-        <div class="accordion" id="accordionExample">
-          <div class="card">
-            <div class="card-header" id="headingOne">
-              <h5 class="mb-0">
-                <button type="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">¿Quienes somos?</button>
-              </h5>
-            </div>
-            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-              <div class="card-body"> 
-                uff
-              </div>
-            </div>
-          </div>
-        </div>
-
       </div>
-
+        
         <footer class="android-footer mdl-mega-footer">
-          <div class="mdl-mega-footer--top-section">
-            <div class="mdl-mega-footer--left-section">
-              <!--<button class="mdl-mega-footer--social-btn">G +</button>
-              &nbsp;
-              <button class="mdl-mega-footer--social-btn">F</button>
-              &nbsp;
-              <button class="mdl-mega-footer--social-btn">T</button>-->
-            </div>
-            <div class="mdl-mega-footer--right-section">
-              <a class="mdl-typography--font-light" href="#top">
-                Inicio
-                <i class="material-icons">expand_less</i>
-              </a>
-            </div>
-          </div>
-
           <div class="mdl-mega-footer--middle-section">
             <p class="mdl-typography--font-light">EkoSeats S.A de C.V</p>
             <p class="mdl-typography--font-light">Universidad Politecnica de Quintana Roo</p>
           </div>
-
-          <div class="mdl-mega-footer--bottom-section">
-            <a class="android-link mdl-typography--font-light" href="">Blog</a>
-            <a class="android-link mdl-typography--font-light" href="">Política de Privacidad</a>
-          </div>
-
         </footer>
       </div>
     </div>

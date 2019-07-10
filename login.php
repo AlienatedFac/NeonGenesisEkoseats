@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Ejemplo de Material Design">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>EkoSeats</title>
+    <title>Login</title>
 
     <!-- Estilos -->
     <script
@@ -74,9 +74,9 @@
           <div class="android-navigation-container">
             <nav class="android-navigation mdl-navigation">
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="index.php">Home</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Carrito</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="carrito.php">Carrito</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="login.php">Login</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Catalogo</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="catalogo.php">Catalogo</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="quienes_somos.php">Preguntas Frecuentes</a>
             </nav>
           </div>
@@ -158,7 +158,7 @@
               </div>
               <div class="mt-4">
                 <div class="d-flex justify-content-center links">
-                  ¿No tienes una cuenta? <a href="#" class="ml-2">Crear una cuenta</a>
+                  ¿No tienes una cuenta? <a href="registro.php" class="ml-2">Crear una cuenta</a>
                 </div>
                 <div class="d-flex justify-content-center links">
                   <a href="#">¿Olvidaste tu contraseña?</a>
