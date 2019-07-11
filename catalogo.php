@@ -218,15 +218,16 @@
                         ?>
                           <div class='mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp'>
                             <div class='mdl-card__media'>
-                              <img src='images/$nombre_seccion/$imagen.jpg'>
+                              <img src='images/<?php echo $nombre_seccion?>/<?php echo $imagen ?>.jpg'>
                             </div>
                             <div class='mdl-card__title'>
-                              <h4 class='mdl-card__title-text'>$nombre</h4>
+                              <h4 class='mdl-card__title-text'><?php echo $nombre ?></h4>
+                                
                             </div>
                             <div class='mdl-card__supporting-text'>
                             </div>
                             <div class='mdl-card__actions'>
-                              <a class='android-link mdl-button mdl-js-button mdl-typography--text-uppercase' href='detalles.php?valor=$valor' >Carrito, ver mas
+                              <a class='android-link mdl-button mdl-js-button mdl-typography--text-uppercase' href='detalles.php?valor= <?php echo $imagen ?>' >Carrito, ver mas
                                 <i class='material-icons'>chevron_right</i>
                               </a>
                             </div>
