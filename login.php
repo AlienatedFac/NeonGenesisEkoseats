@@ -9,8 +9,8 @@
 
     <!-- Estilos -->
     <script
-    src="https://code.jquery.com/jquery-3.4.1.slim.js"
-    integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI="
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"></script>
     <!-- Latest compiled and minified CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -123,6 +123,9 @@
         </form>
       </div>
       <div class="android-content mdl-layout__content">
+        <div class="error">
+          <span>Datos invalidos, intentalo de nuevo por favor.</span>
+        </div>
         <div class="container h-100">
           <div class="d-flex justify-content-center h-100">
             <div class="user_card">
@@ -132,29 +135,30 @@
                 </div>
               </div>
               <div class="d-flex justify-content-center form_container">
-                <form>
+                <form id="form_sesion">
                   <div class="input-group mb-3">
                     <div class="input-group-append">
                       <span class="input-group-text"><i class="fas fa-user"></i></span>
                     </div>
-                    <input type="text" name="" class="form-control input_user" value="" placeholder="Usuario">
+
+                    <!-- input de usuario -->
+                    <input type="email" name="input_usuario" required class="form-control input_user" value="" placeholder="Correo Electronico" style="width: 350px;">
+
                   </div>
                   <div class="input-group mb-2">
                     <div class="input-group-append">
                       <span class="input-group-text"><i class="fas fa-key"></i></span>
                     </div>
-                    <input type="password" name="" class="form-control input_pass" value="" placeholder="Contraseña">
+
+                    <!-- input de contraseña -->
+                    <input type="password" name="input_contra" required class="form-control input_pass" value="" placeholder="Contraseña">
+
                   </div>
-                  <div class="form-group">
-                    <div class="custom-control custom-checkbox">
-                      <input type="checkbox" class="custom-control-input" id="customControlInline">
-                      <label class="custom-control-label" for="customControlInline">Recuerdame</label>
-                    </div>
-                  </div>
-                </form>
+                  <div class="d-flex justify-content-center mt-3 login_container">
+                  <!-- <button type="button" name="sesion_button" class="btn login_btn">Iniciar Sesión</button> -->
+                  <input type="submit" name="sesion_button" class="btn login_btn" value="Iniciar Sesion">
               </div>
-              <div class="d-flex justify-content-center mt-3 login_container">
-                <button type="button" name="button" class="btn login_btn">Iniciar Sesión</button>
+                </form>
               </div>
               <div class="mt-4">
                 <div class="d-flex justify-content-center links">
@@ -179,6 +183,7 @@
     </div>
  
     <script src="js/material.min.js"></script>
+    <script src="js/js_login.js"></script>
 
 
   </body>

@@ -9,8 +9,8 @@
 
     <!-- Estilos -->
     <script
-    src="https://code.jquery.com/jquery-3.4.1.slim.js"
-    integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI="
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"></script>
     <!-- Latest compiled and minified CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -127,33 +127,33 @@
         <div class="card" id="tarjeta">
           <div class="card-body">
             <h5 class="card-title" style="text-align: center;">¡Unete a esta gran comunidad!</h5>
-            <form>
+            <form id="form_registro">
               <div class="row">
                 <div class="col">
-                  <input type="text" class="form-control" placeholder="Nombre(s)">
+                  <input type="text" name="input_nombre" class="form-control" required placeholder="Nombre(s)">
                 </div>
                 <div class="col">
-                  <input type="text" class="form-control" placeholder="Apellido(s)">
+                  <input type="text" name="input_apellidos" class="form-control" placeholder="Apellido(s)">
                 </div>
               </div>
                 <br>
               <div class="row">
                 <div class="col">
-                  <input type="email" class="form-control" placeholder="Correo Electronico">
+                  <input type="email" name="input_correo" class="form-control" required placeholder="Correo Electronico">
                 </div>
                 <div class="col">
-                  <input type="password" class="form-control" placeholder="Contraseña">
+                  <input type="password" name="input_contra" class="form-control" required placeholder="Contraseña">
                 </div>
               </div>
               <div class="row">
                 <div class="col">
                   <br>
                   <p>Vuelve a escribir la contraseña</p>
-                  <input type="password" class="form-control" placeholder="Contraseña">
+                  <input type="password" name="input_contra2" class="form-control" required placeholder="Contraseña">
                 </div>
               </div>
               <br>
-              <button type="button" class="btn login_btn">Registrarse</button>
+              <input type="submit" class="btn login_btn" value="Registrarse">
             </form>
           </div>
         </div>
@@ -173,5 +173,6 @@
     </div>
  
     <script src="js/material.min.js"></script>
+    <script src="js/js_registro.js"></script>
   </body>
 </html>
