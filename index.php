@@ -192,8 +192,9 @@
           <div class="android-card-container mdl-grid">
             <!-- Aqui el contador $contador va alreves para que cargue los que se van subiendo pero como Yisus no ha subido nada pues vale verga -->
            <?php
+    error_reporting(0);
                   $conexion = mysqli_connect("localhost", "root", "", "ekoseat_bdd");
-                    for($contador=1;$contador<5;$contador++){
+                    for($contador=100;$contador>0;$contador--){
                         $consulta =$conexion->query("SELECT * from productos WHERE id_producto= $contador");
                         if($resultado = mysqli_fetch_array($consulta)){
                            //Guardo los datos de la BD en las variables de php
@@ -207,7 +208,8 @@
                            $usuario= $resultado["id_usuario"];
                          
                         }
-                        if($imagen!="")
+                     
+                        if($imagen != "")
                         { 
                           $valor=$imagen;
                         ?>
