@@ -182,7 +182,7 @@
           <div class="android-card-container mdl-grid">
               <?php
                   $conexion = mysqli_connect("localhost", "root", "", "ekoseat_bdd");
-                    for($contador=1;$contador<5;$contador++){
+                    for($contador=1;$contador<100;$contador++){
                         $consulta =$conexion->query("SELECT * from productos WHERE id_producto= $contador AND tipo_producto=$tipo");
                         if($resultado = mysqli_fetch_array($consulta)){
                            //Guardo los datos de la BD en las variables de php
@@ -201,7 +201,7 @@
                         ?>
                           <div class='mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp'>
                             <div class='mdl-card__media'>
-                              <img src='images/<?php echo $nombre_seccion?>/<?php echo $imagen ?>.jpg'>
+                              <img src='<?php echo $ruta ?>'>
                             </div>
                             <div class='mdl-card__title'>
                               <h4 class='mdl-card__title-text'><?php echo $nombre ?></h4>
