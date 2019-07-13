@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="es">
 <?php
-    $id_user;
+    $id_user = 1;
 ?>
   <head>
     <meta charset="utf-8">
@@ -143,51 +143,31 @@
           <div class="android-section-title mdl-typography--display-1-color-contrast">Mi Carrito</div>
           <div class="android-card-container mdl-grid">
          <?php
-                  $conexion = mysqli_connect("localhost", "root", "", "ekoseat_bdd");
-                    for($contador=1;$contador<5;$contador++){
-                        $sql="SELECT * from carrito WHERE id_producto= $contador";
-                        $consulta =$conexion->query(sql);
-                        if($resultado = mysqli_fetch_array($consulta)){
-                           //Guardo los datos de la BD en las variables de php
-                           $imagen = $resultado["id_producto"];
-                           $nombre = $resultado["nombre_producto"];
-                           $descripcion = $resultado["descripcion_producto"];
-                           $stock = $resultado["stock_producto"];
-                           $precio = $resultado["precio_producto"];
-                           $ruta = $resultado["imagenes"];
-                           $tipo= $resultado["tipo_producto"];
-                           $usuario= $resultado["id_usuario"];
-                         
-                        }
-                        if($imagen!="")
-                        { 
-                          $valor=$imagen;
-                        ?>
+                    require 'php/conexion.php';
+                    $consulta = $mysqli->query("SELECT carrito.id_usuario, carrito.id_producto, productos.nombre_producto, productos.imagenes, productos.precio_producto, productos.id_usuario, carrito.cantidad FROM carrito
+                      INNER JOIN productos ON carrito.id_producto = productos.id_producto
+                      WHERE carrito.id_usuario = 1");
+                    while($resultado = mysqli_fetch_assoc($consulta)){
+                    ?>
                           <div class='mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp'>
                             <div class='mdl-card__media'>
-                              <img src='<?php echo $ruta ?>'>
+                              <img src='<?php echo $resultado['imagenes'] ?>'>
                             </div>
                             <div class='mdl-card__title'>
-                              <h4 class='mdl-card__title-text'><?php echo $nombre ?></h4>
+                              <h4 class='mdl-card__title-text'><?php echo $resultado['nombre_producto'] ?></h4>
                                 
                             </div>
                             <div class='mdl-card__supporting-text'>
                             </div>
                             <div class='mdl-card__actions'>
-                              <a class='android-link mdl-button mdl-js-button mdl-typography--text-uppercase' href='detalles.php?valor= <?php echo $imagen ?>' >Carrito, ver mas
+                              <a class='android-link mdl-button mdl-js-button mdl-typography--text-uppercase' href='detalles.php?valor= <?php echo $resultado['id_producto'] ?>' >Carrito, ver mas
                                 <i class='material-icons'>chevron_right</i>
                               </a>
                             </div>
-                          </div>            
-                        <?php
-                            $imagen = "";
-                            $nombre = "";
-                            $descripcion = "";
-                            $precio = "";
-                        } 
-                  }      
-              
-                ?>   
+                          </div>             
+                  <?php
+                    }      
+                  ?>
           </div>
         </div>
 
