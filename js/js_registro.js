@@ -12,10 +12,15 @@ $(document).on('submit','#form_registro',function(event){
 	})
 	.done(function(respuesta) {
 		console.log(respuesta);
-		if(!respuesta.error){
-
+		if(respuesta.error){
+			if(respuesta.correo){
+				$("#nombre").val("");
+				$("#apellidos").val("");
+				$("#correo").val("");
+				$("#error_msg_correo").addClass("error_correo_again_not");
+			}
 		}else{
-			
+			location.href ="../../NeonGenesisEkoseats/login.php";
 		}
 	})
 	.fail(function(resp) {

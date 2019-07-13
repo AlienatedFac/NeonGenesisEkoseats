@@ -10,3 +10,19 @@
 	background: #89d233 !important;
 	color: white !important;
 }
+.error_pass_again{
+	display: none;
+	color: red;
+}
+.error_pass_again_not{
+	display: block;
+	color: red;
+}
+.error_correo_again{
+	display: none;
+	color: red;
+}
+.error_correo_again_not{
+	display: block;
+	color: red;
+}

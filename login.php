@@ -136,13 +136,15 @@
               </div>
               <div class="d-flex justify-content-center form_container">
                 <form id="form_sesion">
+                  <div class="error" id="error_msg_login">
+                      <span>Datos invalidos por favor vuelve a ingresarlos.</span>
+                    </div>
                   <div class="input-group mb-3">
                     <div class="input-group-append">
                       <span class="input-group-text"><i class="fas fa-user"></i></span>
                     </div>
-
                     <!-- input de usuario -->
-                    <input type="email" name="input_usuario" required class="form-control input_user" value="" placeholder="Correo Electronico" style="width: 350px;">
+                    <input type="email" id="correo" name="input_usuario" required class="form-control input_user" value="" placeholder="Correo Electronico" style="width: 350px;">
 
                   </div>
                   <div class="input-group mb-2">
@@ -151,7 +153,7 @@
                     </div>
 
                     <!-- input de contraseña -->
-                    <input type="password" name="input_contra" required class="form-control input_pass" value="" placeholder="Contraseña">
+                    <input type="password" name="input_contra" id="contra" required class="form-control input_pass" value="" placeholder="Contraseña">
 
                   </div>
                   <div class="d-flex justify-content-center mt-3 login_container">

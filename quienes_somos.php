@@ -127,8 +127,7 @@
         </form>
       </div>
       <div class="android-content mdl-layout__content">
-        <a name="top"></a>
-        <div class="android-be-together-section mdl-typography--text-center" style="height: 100% !important;background: url('images/fondo_weno.png') center 30% no-repeat;">
+        <div class="android-be-together-section mdl-typography--text-center" style="height: 70% !important;background: url('images/fondo_weno.png') center no-repeat;">
           <div class="android-font android-slogan">Conocenos.</div>
           <div class="android-font android-sub-slogan">Por las generaciones futuras.</div>
         </div>

@@ -13,9 +13,11 @@ $(document).on('submit','#form_sesion',function(event){
 	.done(function(respuesta) {
 		console.log(respuesta);
 		if(!respuesta.error){
-
+			location.href = "../../NeonGenesisEkoseats/index.php?id_user=" + respuesta.id_usuario + "&" + "nombre_user=" + respuesta.nombre_usuario;
 		}else{
-			
+			$("#correo").val("");
+			$("#contra").val("");
+			$("#error_msg_login").addClass("error_not");
 		}
 	})
 	.fail(function(resp) {

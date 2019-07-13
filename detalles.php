@@ -4,19 +4,9 @@
 //Obterner las variable
 
 $valor=($_GET['valor']);
-$conexion = mysqli_connect("localhost", "root", "", "ekoseat_bdd");
-$consulta =$conexion->query("SELECT * from productos WHERE id_producto= $valor ");
-if($resultado = mysqli_fetch_array($consulta)){
-   //Guardo los datos de la BD en las variables de php
-   $imagen = $resultado["id_producto"];
-   $nombre = $resultado["nombre_producto"];
-   $descripcion = $resultado["descripcion_producto"];
-   $stock = $resultado["stock_producto"];
-   $precio = $resultado["precio_producto"];
-   $ruta = $resultado["imagenes"];
-   $tipo= $resultado["tipo_producto"];
-   $usuario= $resultado["id_usuario"];
-}
+require 'php/conexion.php';
+$consulta = $mysqli->query("SELECT * FROM productos WHERE id_producto = ".$valor);
+$resultado = mysqli_fetch_array($consulta);
 
 // Mostar las variables
 ?>
@@ -25,7 +15,7 @@ if($resultado = mysqli_fetch_array($consulta)){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Ejemplo de Material Design">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Login</title>
+    <title><?php echo $resultado['nombre_producto']; ?></title>
 
     <!-- Estilos -->
     <script
@@ -156,14 +146,16 @@ if($resultado = mysqli_fetch_array($consulta)){
       <div class="android-content mdl-layout__content">
         <a name="top"></a>
         <div class="android-wear-section">
-            <img href="images/salas/1.jpg">    
+          <div style="width: 100%;height: 100%; text-align: center;">
+            <img src='<?php echo $resultado['imagenes'] ?>' alt="" style="width: auto;height: 80%;">
+          </div>
           <div class="android-wear-band">
             <div class="android-wear-band-text">
-              <div class="mdl-typography--display-2 mdl-typography--font-thin"><?php echo $nombre ?></div>
+              <div class="mdl-typography--display-2 mdl-typography--font-thin"><?php echo $resultado['nombre_producto'] ?></div>
               <p class="mdl-typography--headline mdl-typography--font-thin">
-              <?php echo $descripcion ?>
+              <?php echo $resultado['descripcion_producto'] ?>
               </p>
-            <div class="mdl-typography--display-2 mdl-typography--font-thin">$ <?php echo $precio ?></div>
+            <div class="mdl-typography--display-2 mdl-typography--font-thin">$ <?php echo $resultado['precio_producto'] ?></div>
               <p>
                 <a class="mdl-typography--font-regular mdl-typography--text-uppercase android-alt-link" href="">
                   Mira las novedades que tenemos&nbsp;<i class="material-icons">chevron_right</i>

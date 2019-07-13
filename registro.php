@@ -130,16 +130,19 @@
             <form id="form_registro">
               <div class="row">
                 <div class="col">
-                  <input type="text" name="input_nombre" class="form-control" required placeholder="Nombre(s)">
+                  <input type="text" name="input_nombre" id="nombre" class="form-control" required placeholder="Nombre(s)">
                 </div>
                 <div class="col">
-                  <input type="text" name="input_apellidos" class="form-control" placeholder="Apellido(s)">
+                  <input type="text" name="input_apellidos" id="apellidos" class="form-control" placeholder="Apellido(s)">
                 </div>
               </div>
                 <br>
+              <div class="error_correo_again" id="error_msg_correo">
+                  <span>El correo que ingresaste ya existe.</span>
+              </div>
               <div class="row">
                 <div class="col">
-                  <input type="email" name="input_correo" class="form-control" required placeholder="Correo Electronico">
+                  <input type="email" name="input_correo" id="correo" class="form-control" required placeholder="Correo Electronico">
                 </div>
                 <div class="col">
                   <input type="password" name="input_contra" class="form-control" required placeholder="Contraseña">
@@ -148,8 +151,11 @@
               <div class="row">
                 <div class="col">
                   <br>
-                  <p>Vuelve a escribir la contraseña</p>
+                  <span>Vuelve a escribir la contraseña</span>
                   <input type="password" name="input_contra2" class="form-control" required placeholder="Contraseña">
+                  <div class="error_pass_again" id="error_msg_pass">
+                    <span>Por favor, vuelve a escribir la contraseña.</span>
+                  </div>
                 </div>
               </div>
               <br>

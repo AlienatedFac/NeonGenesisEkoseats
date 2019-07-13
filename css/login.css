@@ -70,12 +70,12 @@
 			background-color: #c0392b !important;
 		}
 		.error{
-		    background-color: #E74F4F;
-		    top: 0;
-		    padding: 10px 0 ;
-		    border-radius:  0 0 5px 5px;
-		    color: #fff;
-		    width: 100%;
+		    color: red;
 		    text-align: center;
 		    display: none;
+		}
+		.error_not{
+		    color: red;
+		    text-align: center;
+		    display: block;
 		}
