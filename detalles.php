@@ -2,7 +2,8 @@
 <html lang="es">
 <?php
 //Obterner las variable
-
+$id_user;
+$id_user=1;
 $valor=($_GET['valor']);
 require 'php/conexion.php';
 $consulta = $mysqli->query("SELECT * FROM productos WHERE id_producto = ".$valor);
@@ -85,7 +86,6 @@ $resultado = mysqli_fetch_array($consulta);
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="index.php">Home</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="carrito.php">Carrito</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="login.php">Login</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="catalogo.php">Catalogo</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="quienes_somos.php">Preguntas Frecuentes</a>
             </nav>
           </div>
@@ -157,8 +157,8 @@ $resultado = mysqli_fetch_array($consulta);
               </p>
             <div class="mdl-typography--display-2 mdl-typography--font-thin">$ <?php echo $resultado['precio_producto'] ?></div>
               <p>
-                <a class="mdl-typography--font-regular mdl-typography--text-uppercase android-alt-link" href="">
-                  Mira las novedades que tenemos&nbsp;<i class="material-icons">chevron_right</i>
+                <a class="mdl-typography--font-regular mdl-typography--text-uppercase android-alt-link" onclick="myFunction()" href="">
+                  Agregar al Carrito&nbsp;<i class="material-icons">chevron_right</i>
                 </a>
                 
               </p>
@@ -287,6 +287,11 @@ $resultado = mysqli_fetch_array($consulta);
     </div>
  
     <script src="js/material.min.js"></script>
+    <script>
+function myFunction() {
+  alert("Hello! I am an alert box!");
+}
+</script>
 
 
   </body>
