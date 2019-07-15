@@ -80,7 +80,6 @@
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="index.php">Home</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="carrito.php">Carrito</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="login.php">Login</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="catalogo.php">Catalogo</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="quienes_somos.php">Preguntas Frecuentes</a>
             </nav>
           </div>

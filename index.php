@@ -79,7 +79,6 @@
             <nav class="android-navigation mdl-navigation">
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="index.php">Home</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="carrito.php">Carrito</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="catalogo.php">Catalogo</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="quienes_somos.php">Preguntas Frecuentes</a>
               <div class="dropdown mdl-navigation__link mdl-typography--text-uppercase" style="">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="">
@@ -347,7 +346,6 @@
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="index.php">Home</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="carrito.php">Carrito</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="login.php">Login</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="catalogo.php">Catalogo</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="quienes_somos.php">Preguntas Frecuentes</a>
             </nav>
           </div>
