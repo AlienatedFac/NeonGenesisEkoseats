@@ -257,6 +257,7 @@ echo '0 results';
 		</footer>
 		
       </div>
+    <div> <!-- Div? -->
     </div>
  
     <script src="js/material.min.js"></script>
