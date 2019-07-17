@@ -190,12 +190,12 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "bdd.";
+$dbname = "ekoseat_bdd";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-$sql = 'SELECT * from products';
+$sql = 'SELECT * from productos';
 if (mysqli_query($conn, $sql)) {
 echo "";
 } else {

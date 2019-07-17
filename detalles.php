@@ -160,8 +160,11 @@ $resultado = mysqli_fetch_array($consulta);
                 <a class="mdl-typography--font-regular mdl-typography--text-uppercase android-alt-link" onclick="myFunction()" href="">
                   Agregar al Carrito&nbsp;<i class="material-icons">chevron_right</i>
                 </a>
+                  
                 
               </p>
+            <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+            <div class="elfsight-app-5d305a26-31a6-4f7b-bb27-8cee916075a1"></div>
             </div>
           </div>
         </div>
