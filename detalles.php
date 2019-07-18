@@ -176,6 +176,7 @@ $resultado = mysqli_fetch_array($consulta);
               <?php echo $resultado['descripcion_producto'] ?>
               </p>
             <?php 
+    $tipo= $resultado['tipo_producto'];
     $envio;
     if ($resultado['precio_producto']>=2500)
     {
@@ -235,77 +236,35 @@ $resultado = mysqli_fetch_array($consulta);
      <!--Aqui Iran las recientes de Ekoseats-->
           <div class="android-section-title mdl-typography--display-1-color-contrast">Relacionados</div>
           <div class="android-card-container mdl-grid">
-            <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
-              <div class="mdl-card__media">
-                <img src="images/more-from-1.png">
-              </div>
-              <div class="mdl-card__title">
-                 <h4 class="mdl-card__title-text">Producto</h4>
-              </div>
-              <div class="mdl-card__supporting-text">
-                <span class="mdl-typography--font-light mdl-typography--subhead">Descripcion</span>
-              </div>
-              <div class="mdl-card__actions">
-                  <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="https://androidify.com" target="_blank">
-                   Ver mas
-                   <i class="material-icons">chevron_right</i>
-                 </a>
-              </div>
-            </div>
-
-            <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
-              <div class="mdl-card__media">
-                <img src="images/more-from-4.png">
-              </div>
-              <div class="mdl-card__title">
-                 <h4 class="mdl-card__title-text">Producto</h4>
-              </div>
-              <div class="mdl-card__supporting-text">
-                <span class="mdl-typography--font-light mdl-typography--subhead">Descripcion</span>
-              </div>
-              <div class="mdl-card__actions">
-                 <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="https://androidify.com" target="_blank">
-                   Ver mas
-                   <i class="material-icons">chevron_right</i>
-                 </a>
-              </div>
-            </div>
-
-            <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
-              <div class="mdl-card__media">
-                <img src="images/more-from-2.png">
-              </div>
-              <div class="mdl-card__title">
-                 <h4 class="mdl-card__title-text">Producto</h4>
-              </div>
-              <div class="mdl-card__supporting-text">
-                <span class="mdl-typography--font-light mdl-typography--subhead">Descripcion</span>
-              </div>
-              <div class="mdl-card__actions">
-                 <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="">
-                   Ver mas
-                   <i class="material-icons">chevron_right</i>
-                 </a>
-              </div>
-            </div>
-
-            <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
-              <div class="mdl-card__media">
-                <img src="images/more-from-3.png">
-              </div>
-              <div class="mdl-card__title">
-                 <h4 class="mdl-card__title-text">Producto</h4>
-              </div>
-              <div class="mdl-card__supporting-text">
-                <span class="mdl-typography--font-light mdl-typography--subhead">Descripcion</span>
-              </div>
-              <div class="mdl-card__actions">
-                 <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="">
-                   Ver mas
-                   <i class="material-icons">chevron_right</i>
-                 </a>
-              </div>
-            </div>
+                 <?php
+                    require 'php/conexion.php';
+                    $consulta = $mysqli->query("SELECT * FROM productos WHERE tipo_producto= $tipo ORDER BY id_producto DESC");
+                    $cont = 0;
+                    while($resultado = mysqli_fetch_assoc($consulta)){
+                    ?>
+                          <div class='mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp'>
+                            <div class='mdl-card__media'>
+                              <img src='<?php echo $resultado['imagenes'] ?>'>
+                            </div>
+                            <div class='mdl-card__title'>
+                              <h4 class='mdl-card__title-text'><?php echo $resultado['nombre_producto'] ?></h4>
+                                
+                            </div>
+                            <div class='mdl-card__supporting-text'>
+                            </div>
+                            <div class='mdl-card__actions'>
+                              <a class='android-link mdl-button mdl-js-button mdl-typography--text-uppercase' href='detalles.php?valor= <?php echo $resultado['id_producto'] ?>' >Carrito, ver mas
+                                <i class='material-icons'>chevron_right</i>
+                              </a>
+                            </div>
+                          </div>             
+                  <?php
+                      if($cont == 3){
+                        break;
+                      }
+                      $cont++;
+                    }      
+                  ?>  
           </div>
         </div>
 
