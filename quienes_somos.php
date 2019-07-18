@@ -147,11 +147,11 @@
         </form>
       </div>
       <div class="android-content mdl-layout__content">
-        <div class="android-be-together-section mdl-typography--text-center" style="height: 70% !important;background: url('images/fondo_weno.png') center no-repeat;">
-          <div class="android-font android-slogan">Conocenos.</div>
+        <div class="android-be-together-section mdl-typography--text-center" style="background: url('images/fondo_weno.png') center no-repeat; background-size: cover; height: 400px;">
+          <div class="android-font android-slogan" style="">Conocenos.</div>
           <div class="android-font android-sub-slogan">Por las generaciones futuras.</div>
         </div>
-
+        
       </div>
         
         <footer class="android-footer mdl-mega-footer">
