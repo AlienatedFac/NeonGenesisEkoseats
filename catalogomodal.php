@@ -3,7 +3,7 @@
     <?php
 
 //Obterner las variable
-
+session_start();
 $catalogo1=($_GET['catalogo1']);
 $nombre_seccion=$catalogo1;
 $imagen="";
