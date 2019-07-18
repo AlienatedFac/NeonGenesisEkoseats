@@ -209,7 +209,7 @@ while($row = mysqli_fetch_assoc($result)) { ?>
                         <tbody>
                            <tr>
                               <th>
-                              <?php echo $row['product_id']; ?>
+                              <?php echo $row['id']; ?>
                               </th>
                               <td>
                               <?php echo $row['product_name']; ?>
