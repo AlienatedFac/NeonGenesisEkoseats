@@ -27,7 +27,8 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=es" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/material.min.css">
-    <link rel="stylesheet" href="css/styles.css">  
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/quienes_somos.css">  
   </head>
    <!-- WhatsHelp.io widget -->
 <script type="text/javascript">
@@ -151,7 +152,30 @@
           <div class="android-font android-slogan" style="">Conocenos.</div>
           <div class="android-font android-sub-slogan">Por las generaciones futuras.</div>
         </div>
-        
+        <div class="quienes_somos">
+          <div class="texto_qs">
+            <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+          </div>
+          <div class="img_qs">
+            <img src="images/quienes_somos.png" alt="">
+          </div>
+        </div>
+        <div class="porque">
+          <div class="texto_porque">
+            <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+          </div>
+          <div class="img_porque">
+            <img src="images/interrogacion.png" alt="">
+          </div>
+        </div>
+        <div class="para_que">
+          <div class="texto_para_que">
+            <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+          </div>
+          <div class="img_para_que">
+            <img src="images/para_que.jpg" alt="" style="">
+          </div>
+        </div>
       </div>
         
         <footer class="android-footer mdl-mega-footer">
