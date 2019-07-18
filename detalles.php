@@ -156,7 +156,23 @@ $resultado = mysqli_fetch_array($consulta);
               <p class="mdl-typography--headline mdl-typography--font-thin">
               <?php echo $resultado['descripcion_producto'] ?>
               </p>
-            <div class="mdl-typography--display-2 mdl-typography--font-thin">$ <?php echo $resultado['precio_producto'] ?></div>
+            <?php 
+    $envio;
+    if ($resultado['precio_producto']>=2500)
+    {
+    $envio=0;
+    $datoenvio="Gratis";    
+    }
+    else
+    {
+    $envio=200;
+    $datoenvio="$200";
+    }
+                ?>
+            <div class="mdl-typography--display-2 mdl-typography--font-thin">$ <?php echo $resultado['precio_producto'] ?>    </div>
+              <p class="mdl-typography--headline mdl-typography--font-thin">
+              Envio: <?php echo $datoenvio ?>
+              </p>
               <p>
                 <a class="mdl-typography--font-regular mdl-typography--text-uppercase android-alt-link" onclick="myFunction()" href="">
                   Agregar al Carrito&nbsp;<i class="material-icons">chevron_right</i>
@@ -164,8 +180,23 @@ $resultado = mysqli_fetch_array($consulta);
                   
                 
               </p>
-            <script src="https://apps.elfsight.com/p/platform.js" defer></script>
-            <div class="elfsight-app-5d305a26-31a6-4f7b-bb27-8cee916075a1"></div>
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_xclick">
+<input type="hidden" name="business" value="substratum21@gmail.com">
+<input type="hidden" name="lc" value="MX">
+<input type="hidden" name="item_name" value="<?php echo $resultado['nombre_producto'] ?>">
+<input type="hidden" name="item_number" value="Id">
+<input type="hidden" name="amount" value="<?php echo $resultado['precio_producto'] ?>.00">
+<input type="hidden" name="currency_code" value="MXN">
+<input type="hidden" name="button_subtype" value="services">
+<input type="hidden" name="no_note" value="0">
+<input type="hidden" name="tax_rate" value="0.000">
+<input type="hidden" name="shipping" value="100.00">
+<input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHostedGuest">
+<input type="image" src="https://www.paypalobjects.com/es_XC/MX/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal, la forma más segura y rápida de pagar en línea.">
+<img alt="" border="0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1">
+</form>
+
             </div>
           </div>
         </div>
