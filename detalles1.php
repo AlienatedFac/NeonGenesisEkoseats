@@ -86,8 +86,27 @@ $resultado = mysqli_fetch_array($consulta);
             <nav class="android-navigation mdl-navigation">
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="index.php">Home</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="carrito.php">Carrito</a>
+              <?php 
+              if(!isset($_SESSION['id_usuario']) || !isset($_SESSION['nombre_usuario'])){
+              ?>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="login.php">Login</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="quienes_somos.php">Preguntas Frecuentes</a>
+              <?php
+              }else{
+              ?>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="quienes_somos.php">Preguntas Frecuentes</a>
+              <div class="dropdown mdl-navigation__link mdl-typography--text-uppercase" style="">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="">
+                  <?php echo $_SESSION['nombre_usuario']; ?>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="#">Dashboard</a><br>
+                  <a class="dropdown-item" href="php/cerrar_sesion.php">Cerrar Sesion</a>
+                </div>
+              </div>
+              <?php
+              }
+              ?>
             </nav>
           </div>
           <!-- <button class="android-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="more-button">

@@ -27,8 +27,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=es" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/material.min.css">
-    <link rel="stylesheet" href="css/styles.css">
-    
+    <link rel="stylesheet" href="css/styles.css">  
   </head>
    <!-- WhatsHelp.io widget -->
 <script type="text/javascript">
@@ -60,7 +59,7 @@
 <!-- /WhatsHelp.io widget -->
   <body>
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-<!--Encabezado-->
+    <!--Encabezado-->
         
       <div class="android-header mdl-layout__header mdl-layout__header--waterfall">
         <div class="mdl-layout__header-row">
@@ -82,8 +81,27 @@
             <nav class="android-navigation mdl-navigation">
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="index.php">Home</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="carrito.php">Carrito</a>
+              <?php 
+              if(!isset($_SESSION['id_usuario']) || !isset($_SESSION['nombre_usuario'])){
+              ?>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="login.php">Login</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="quienes_somos.php">Preguntas Frecuentes</a>
+              <?php
+              }else{
+              ?>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="quienes_somos.php">Preguntas Frecuentes</a>
+              <div class="dropdown mdl-navigation__link mdl-typography--text-uppercase" style="">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="">
+                  <?php echo $_SESSION['nombre_usuario']; ?>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="#">Dashboard</a><br>
+                  <a class="dropdown-item" href="php/cerrar_sesion.php">Cerrar Sesion</a>
+                </div>
+              </div>
+              <?php
+              }
+              ?>
             </nav>
           </div>
           <span class="android-mobile-title mdl-layout-title">Ekoseats
@@ -133,6 +151,7 @@
           <div class="android-font android-slogan">Conocenos.</div>
           <div class="android-font android-sub-slogan">Por las generaciones futuras.</div>
         </div>
+
       </div>
         
         <footer class="android-footer mdl-mega-footer">
