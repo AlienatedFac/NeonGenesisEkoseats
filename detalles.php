@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="es">
 <?php
+session_start();
 //Obterner las variable
 $id_user;
 $id_user=1;

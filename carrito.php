@@ -1,8 +1,8 @@
+<?php 
+  session_start();
+?>
 <!doctype html>
 <html lang="es">
-<?php
-    $id_user = 1;
-?>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -145,7 +145,7 @@
                     require 'php/conexion.php';
                     $consulta = $mysqli->query("SELECT carrito.id_usuario, carrito.id_producto, productos.nombre_producto, productos.imagenes, productos.precio_producto, productos.id_usuario, carrito.cantidad FROM carrito
                       INNER JOIN productos ON carrito.id_producto = productos.id_producto
-                      WHERE carrito.id_usuario = 1");
+                      WHERE carrito.id_usuario =".$_SESSION['id_usuario']);
                     while($resultado = mysqli_fetch_assoc($consulta)){
                     ?>
                           <div class='mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp'>

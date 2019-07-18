@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="es">
     <?php
+    session_start();
       //Obterner las variable
       $catalogo1=($_GET['catalogo1']);
       $nombre_seccion=$catalogo1;
