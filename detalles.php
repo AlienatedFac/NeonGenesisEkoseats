@@ -86,6 +86,11 @@ $resultado = mysqli_fetch_array($consulta);
             <nav class="android-navigation mdl-navigation">
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="index.php">Home</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="carrito.php">Carrito</a>
+              <?php 
+              if(!isset($_SESSION['id_usuario']) || !isset($_SESSION['nombre_usuario'])){
+              ?>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="login.php">Login</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="quienes_somos.php">Preguntas Frecuentes</a>
               <?php
               }else{
               ?>
