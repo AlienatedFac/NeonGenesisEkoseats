@@ -215,6 +215,7 @@
            <?php
                     require 'php/conexion.php';
                     $consulta = $mysqli->query("SELECT * FROM productos ORDER BY id_producto DESC");
+                    $cont = 0;
                     while($resultado = mysqli_fetch_assoc($consulta)){
                     ?>
                           <div class='mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp'>
@@ -234,6 +235,10 @@
                             </div>
                           </div>             
                   <?php
+                      if($cont == 3){
+                        break;
+                      }
+                      $cont++;
                     }      
                   ?>   
           </div>
