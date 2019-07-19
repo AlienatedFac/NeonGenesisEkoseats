@@ -158,15 +158,34 @@
         <div class="android-more-section">
             
      <!--Aqui Iran las recientes de Ekoseats-->
-          <div class="android-section-title mdl-typography--display-1-color-contrast">Mi Carrito</div>
-          <div class="android-card-container mdl-grid">
+        
          <?php
+   
+              if(!isset($_SESSION['id_usuario']) || !isset($_SESSION['nombre_usuario'])){
+              ?>
+           <div class="android-customized-section">
+          <div class="android-customized-section-text">
+            <div class="mdl-typography--font-light mdl-typography--display-1-color-contrast">UPS!</div>
+            <p class="mdl-typography--font-light">
+              Parece que no has iniciado sesion :c, para agregar cosas y ver tu carrito 
+              <br>
+              <a href="login.php" class="android-link mdl-typography--font-light">inicia sesion aqui!.</a>
+            </p>
+          </div>
+          <div class="android-customized-section-image"></div>
+        </div>
+              <?php
+              }else{
+                  
+           
                     require 'php/conexion.php';
                     $consulta = $mysqli->query("SELECT carrito.id_usuario, carrito.id_producto, productos.nombre_producto, productos.imagenes, productos.precio_producto, productos.id_usuario, carrito.cantidad FROM carrito
                       INNER JOIN productos ON carrito.id_producto = productos.id_producto
                       WHERE carrito.id_usuario =".$_SESSION['id_usuario']);
                     while($resultado = mysqli_fetch_assoc($consulta)){
                     ?>
+                         <div class="android-section-title mdl-typography--display-1-color-contrast">Mi Carrito</div>
+                         <div class="android-card-container mdl-grid">
                           <div class='mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp'>
                             <div class='mdl-card__media'>
                               <img src='<?php echo $resultado['imagenes'] ?>'>
@@ -182,11 +201,13 @@
                                 <i class='material-icons'>chevron_right</i>
                               </a>
                             </div>
-                          </div>             
+                          </div>   
+                        </div>
                   <?php
-                    }      
+                    }
+              }
                   ?>
-          </div>
+          
         </div>
 
         <footer class="android-footer mdl-mega-footer">
