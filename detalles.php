@@ -33,6 +33,7 @@ $resultado = mysqli_fetch_array($consulta);
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=es" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/2cf79d88f0.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/material.min.css">
     <link rel="stylesheet" href="css/styles.css">
@@ -176,19 +177,17 @@ $resultado = mysqli_fetch_array($consulta);
               <?php echo $resultado['descripcion_producto'] ?>
               </p>
             <?php 
-    $tipo= $resultado['tipo_producto'];
-    $envio;
-    if ($resultado['precio_producto']>=2500)
-    {
-    $envio=0;
-    $datoenvio="Gratis";    
-    }
-    else
-    {
-    $envio=200;
-    $datoenvio="$200";
-    }
-                ?>
+                $tipo= $resultado['tipo_producto'];
+                $envio;
+                if ($resultado['precio_producto']>=2500){
+                  $envio=0;
+                  $datoenvio="Gratis";    
+                }
+                else{
+                  $envio=200;
+                  $datoenvio="$200";
+                }
+            ?>
             <div class="mdl-typography--display-2 mdl-typography--font-thin">$ <?php echo $resultado['precio_producto'] ?>    </div>
               <p class="mdl-typography--headline mdl-typography--font-thin">
               Envio: <?php echo $datoenvio ?>
@@ -201,22 +200,21 @@ $resultado = mysqli_fetch_array($consulta);
                 
               </p>
             <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_xclick">
-<input type="hidden" name="business" value="substratum21@gmail.com">
-<input type="hidden" name="lc" value="MX">
-<input type="hidden" name="item_name" value="<?php echo $resultado['nombre_producto'] ?>">
-<input type="hidden" name="item_number" value="Id">
-<input type="hidden" name="amount" value="<?php echo $resultado['precio_producto'] ?>.00">
-<input type="hidden" name="currency_code" value="MXN">
-<input type="hidden" name="button_subtype" value="services">
-<input type="hidden" name="no_note" value="0">
-<input type="hidden" name="tax_rate" value="0.000">
-<input type="hidden" name="shipping" value="100.00">
-<input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHostedGuest">
-<input type="image" src="https://www.paypalobjects.com/es_XC/MX/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal, la forma más segura y rápida de pagar en línea.">
-<img alt="" border="0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1">
-</form>
-
+              <input type="hidden" name="cmd" value="_xclick">
+              <input type="hidden" name="business" value="substratum21@gmail.com">
+              <input type="hidden" name="lc" value="MX">
+              <input type="hidden" name="item_name" value="<?php echo $resultado['nombre_producto'] ?>">
+              <input type="hidden" name="item_number" value="Id">
+              <input type="hidden" name="amount" value="<?php echo $resultado['precio_producto'] ?>.00">
+              <input type="hidden" name="currency_code" value="MXN">
+              <input type="hidden" name="button_subtype" value="services">
+              <input type="hidden" name="no_note" value="0">
+              <input type="hidden" name="tax_rate" value="0.000">
+              <input type="hidden" name="shipping" value="100.00">
+              <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHostedGuest">
+              <input type="image" src="https://www.paypalobjects.com/es_XC/MX/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal, la forma más segura y rápida de pagar en línea.">
+              <img alt="" border="0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1">
+            </form>
             </div>
           </div>
         </div>
@@ -253,7 +251,8 @@ $resultado = mysqli_fetch_array($consulta);
                             <div class='mdl-card__supporting-text'>
                             </div>
                             <div class='mdl-card__actions'>
-                              <a class='android-link mdl-button mdl-js-button mdl-typography--text-uppercase' href='detalles.php?valor= <?php echo $resultado['id_producto'] ?>' >Carrito, ver mas
+                              <i class="fas fa-cart-plus" style="font-size: 2em;"></i>
+                              <a class='android-link mdl-button mdl-js-button mdl-typography--text-uppercase' href='detalles.php?valor= <?php echo $resultado['id_producto'] ?>'>Ver mas
                                 <i class='material-icons'>chevron_right</i>
                               </a>
                             </div>

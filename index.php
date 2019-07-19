@@ -24,6 +24,7 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=es" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/2cf79d88f0.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/material.min.css">
     <link rel="stylesheet" href="css/styles.css">
@@ -206,8 +207,7 @@
           </div>-->
         </div>
         
-        <div class="android-more-section">
-            
+        <div class="android-more-section">   
      <!--Aqui Iran las recientes de Ekoseats-->
           <div class="android-section-title mdl-typography--display-1-color-contrast">Más Recientes</div>
           <div class="android-card-container mdl-grid">
@@ -229,7 +229,8 @@
                             <div class='mdl-card__supporting-text'>
                             </div>
                             <div class='mdl-card__actions'>
-                              <a class='android-link mdl-button mdl-js-button mdl-typography--text-uppercase' href='detalles.php?valor= <?php echo $resultado['id_producto'] ?>' >Carrito, ver mas
+                              <i class="fas fa-cart-plus" style="font-size: 2em;"></i>
+                              <a class='android-link mdl-button mdl-js-button mdl-typography--text-uppercase' href='detalles.php?valor= <?php echo $resultado['id_producto'] ?>' >Ver mas
                                 <i class='material-icons'>chevron_right</i>
                               </a>
                             </div>

@@ -30,6 +30,7 @@
 
     <!-- Estilos -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=es" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/2cf79d88f0.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/material.min.css">
     <link rel="stylesheet" href="css/styles.css">
@@ -195,9 +196,9 @@
          <?php $catalogo1 = "Otros";?> <a class="mobile mdl-navigation__link" href="catalogo.php?catalogo1=<?php echo $catalogo1 ?>">Otros</a>        
         </nav>
       </div>
-      <div class="android-content mdl-layout__content">
+      <div class="android-content mdl-layout__content" style="background-color: #eee7e5 !important;">
         <div class="android-more-section">
-          <div class="android-section-title mdl-typography--display-1-color-contrast"><?php echo $nombre_seccion; ?></div>
+          <div class="android-section-title" style="color: black; font-size: 40px;"><?php echo $nombre_seccion; ?></div>
           <div class="android-card-container mdl-grid">
               <?php
                   $conexion = mysqli_connect("localhost", "root", "", "ekoseat_bdd");
@@ -229,7 +230,8 @@
                             <div class='mdl-card__supporting-text'>
                             </div>
                             <div class='mdl-card__actions'>
-                              <a class='android-link mdl-button mdl-js-button mdl-typography--text-uppercase' href='detalles.php?valor= <?php echo $imagen ?>' >Carrito, ver mas
+                              <i class="fas fa-cart-plus" style="font-size: 2em;"></i>
+                              <a class='android-link mdl-button mdl-js-button mdl-typography--text-uppercase' href='detalles.php?valor= <?php echo $imagen ?>' >Ver mas
                                 <i class='material-icons'>chevron_right</i>
                               </a>
                             </div>
