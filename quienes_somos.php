@@ -70,7 +70,7 @@
           <!-- Agregamos un espacio entre el logo de y el menú -->
           <div class="android-header-spacer mdl-layout-spacer"></div>
           <div class="android-search-box mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right mdl-textfield--full-width">
-            <a href="carrito.php" title=""><i class="fas fa-shopping-cart" style="color: black; font-size: 2em;"></i></a>
+            <a href="carrito.php" title=""><i class="fas fa-shopping-cart" style="color: green; font-size: 2em;"></i></a>
           </div>
           <!-- Menú -->
           <div class="android-navigation-container">

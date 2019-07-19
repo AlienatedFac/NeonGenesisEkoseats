@@ -99,7 +99,7 @@
           <!-- Agregamos un espacio entre el logo de y el menú -->
           <div class="android-header-spacer mdl-layout-spacer"></div>
           <div class="android-search-box mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right mdl-textfield--full-width">
-            <a href="carrito.php" title=""><i class="fas fa-shopping-cart" style="color: black; font-size: 2em;"></i></a>
+            <a href="carrito.php" title=""><i class="fas fa-shopping-cart" style="color: green; font-size: 2em;"></i></a>
           </div>
           <!-- Menú -->
           <div class="android-navigation-container">
@@ -224,9 +224,8 @@
                             <div class='mdl-card__supporting-text'>
                             </div>
                             <div class='mdl-card__actions'>
-                              <i class="fas fa-cart-plus" style="font-size: 2em;"></i>
+                              <i class="fas fa-cart-plus" style="font-size: 2em; color: green;"></i>
                               <a class='android-link mdl-button mdl-js-button mdl-typography--text-uppercase' href='detalles.php?valor= <?php echo $imagen ?>' >Ver mas
-                                <i class='material-icons'>chevron_right</i>
                               </a>
                             </div>
                           </div>            

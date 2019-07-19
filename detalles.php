@@ -37,6 +37,7 @@ $resultado = mysqli_fetch_array($consulta);
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/material.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/detalles.css">
     
   </head>
     
@@ -75,7 +76,7 @@ $resultado = mysqli_fetch_array($consulta);
           <!-- Agregamos un espacio entre el logo de y el menú -->
           <div class="android-header-spacer mdl-layout-spacer"></div>
           <div class="android-search-box mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right mdl-textfield--full-width">
-            <a href="carrito.php" title=""><i class="fas fa-shopping-cart" style="color: black; font-size: 2em;"></i></a>
+            <a href="carrito.php" title=""><i class="fas fa-shopping-cart" style="color: green; font-size: 2em;"></i></a>
           </div>
           <!-- Menú -->
           <div class="android-navigation-container">
@@ -162,7 +163,8 @@ $resultado = mysqli_fetch_array($consulta);
         <a name="top"></a>
         <div class="android-wear-section">
           <div style="width: 100%;height: 100%; text-align: center;">
-            <img src='<?php echo $resultado['imagenes'] ?>' alt="" style="width: auto;height: 80%;">
+            <div id="particles-js"></div>
+            <img src='<?php echo $resultado['imagenes'] ?>' id="imagen" style="width: auto;height: 80%;">
           </div>
           <div class="android-wear-band">
             <div class="android-wear-band-text">
@@ -212,18 +214,19 @@ $resultado = mysqli_fetch_array($consulta);
             </div>
           </div>
         </div>
-        <div class="android-customized-section">
-          <div class="android-customized-section-text">
-            <div class="mdl-typography--font-light mdl-typography--display-1-color-contrast">La forma de buscar y comprar mas facil para ti.</div>
-            <p class="mdl-typography--font-light">
-              Ponga las cosas que usted desee a la derecha en la pantalla principal: las últimas noticias, el clima o una galeria con sus fotos recientes.
-              <br>
-              <a href="" class="android-link mdl-typography--font-light">Busca productos de interes.</a>
-            </p>
+        <div style="background-color: white;">
+          <div class="android-customized-section" style="background-color: white;">
+            <div class="android-customized-section-text">
+              <div class="mdl-typography--font-light mdl-typography--display-1-color-contrast">La forma de buscar y comprar mas facil para ti.</div>
+              <p class="mdl-typography--font-light">
+                Ponga las cosas que usted desee a la derecha en la pantalla principal: las últimas noticias, el clima o una galeria con sus fotos recientes.
+                <br>
+                <a href="" class="android-link mdl-typography--font-light">Busca productos de interes.</a>
+              </p>
+            </div>
+            <div class="android-customized-section-image" style="background-color: white;"></div>
           </div>
-          <div class="android-customized-section-image"></div>
-        </div>
-        <div class="android-more-section">
+        <div class="android-more-section" style="background-color: white;">
             
      <!--Aqui Iran las recientes de Ekoseats-->
           <div class="android-section-title mdl-typography--display-1-color-contrast">Relacionados</div>
@@ -234,7 +237,7 @@ $resultado = mysqli_fetch_array($consulta);
                     $cont = 0;
                     while($resultado = mysqli_fetch_assoc($consulta)){
                     ?>
-                          <div class='mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp'>
+                        <div class='mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp'>
                             <div class='mdl-card__media'>
                               <img src='<?php echo $resultado['imagenes'] ?>'>
                             </div>
@@ -245,9 +248,8 @@ $resultado = mysqli_fetch_array($consulta);
                             <div class='mdl-card__supporting-text'>
                             </div>
                             <div class='mdl-card__actions'>
-                              <i class="fas fa-cart-plus" style="font-size: 2em;"></i>
+                              <i class="fas fa-cart-plus" style="font-size: 2em; color: green;"></i>
                               <a class='android-link mdl-button mdl-js-button mdl-typography--text-uppercase' href='detalles.php?valor= <?php echo $resultado['id_producto'] ?>'>Ver mas
-                                <i class='material-icons'>chevron_right</i>
                               </a>
                             </div>
                           </div>             
@@ -260,7 +262,7 @@ $resultado = mysqli_fetch_array($consulta);
                   ?>  
           </div>
         </div>
-
+      </div>
         <footer class="android-footer mdl-mega-footer">
           <div class="mdl-mega-footer--top-section">
             <div class="mdl-mega-footer--left-section">
@@ -293,11 +295,13 @@ $resultado = mysqli_fetch_array($consulta);
     </div>
  
     <script src="js/material.min.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/particulas.js"></script>
     <script>
-function myFunction() {
-  alert("Hello! I am an alert box!");
-}
-</script>
+      function myFunction() {
+        alert("Hello! I am an alert box!");
+      }
+    </script>
 
 
   </body>
