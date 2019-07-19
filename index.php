@@ -151,8 +151,18 @@
       <div class="android-content mdl-layout__content">
         <a name="top"></a>
         <div class="android-be-together-section mdl-typography--text-center">
-          <div class="android-font android-slogan" style="color: white;">Por un mundo mejor.</div>
-          <div class="android-font android-sub-slogan" style="color: white;">Por las generaciones futuras.</div>
+          <div class="android-font android-slogan" style="color: white; text-shadow:
+                                                                        -1px -1px 0 #000,  
+                                                                          1px -1px 0 #000,
+                                                                          -1px 1px 0 #000,
+                                                                          1px 1px 0 #000;">
+          Por un mundo mejor.</div>
+          <div class="android-font android-sub-slogan" style="color: white;
+                                                              text-shadow:-1px -1px 0 #000,  
+                                                              1px -1px 0 #000,
+                                                              -1px 1px 0 #000,
+                                                              1px 1px 0 #000;">
+          Por las generaciones futuras.</div>
           <div class="android-font android-create-character">
             <a href=""></a>
           </div>

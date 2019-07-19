@@ -143,8 +143,18 @@
       </div>
       <div class="android-content mdl-layout__content">
         <div class="android-be-together-section mdl-typography--text-center" style="background: url('images/fondo_weno.png') center no-repeat; background-size: cover; height: 400px;">
-          <div class="android-font android-slogan" style="color: white;">Conocenos.</div>
-          <div class="android-font android-sub-slogan" style="color: white;">Por las generaciones futuras.</div>
+          <div class="android-font android-slogan" style="color: white; text-shadow:
+                                                                        -1px -1px 0 #000,  
+                                                                          1px -1px 0 #000,
+                                                                          -1px 1px 0 #000,
+                                                                          1px 1px 0 #000;">
+          Conocenos.</div>
+          <div class="android-font android-sub-slogan" style="color: white; text-shadow:
+                                                                        -1px -1px 0 #000,  
+                                                                          1px -1px 0 #000,
+                                                                          -1px 1px 0 #000,
+                                                                          1px 1px 0 #000;">
+          Por las generaciones futuras.</div>
         </div>
         <div class="container" style="min-width: 100% !important;">
           <div class="row" style="background-color: white; height: 300px;">
