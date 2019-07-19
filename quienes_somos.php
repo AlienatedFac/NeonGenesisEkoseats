@@ -149,35 +149,42 @@
       </div>
       <div class="android-content mdl-layout__content">
         <div class="android-be-together-section mdl-typography--text-center" style="background: url('images/fondo_weno.png') center no-repeat; background-size: cover; height: 400px;">
-          <div class="android-font android-slogan" style="">Conocenos.</div>
-          <div class="android-font android-sub-slogan">Por las generaciones futuras.</div>
+          <div class="android-font android-slogan" style="color: white;">Conocenos.</div>
+          <div class="android-font android-sub-slogan" style="color: white;">Por las generaciones futuras.</div>
         </div>
-        <div class="quienes_somos">
-          <div class="texto_qs">
-            <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+        <div class="container" style="min-width: 100% !important;">
+          <div class="row" style="background-color: white; height: 300px;">
+            <div class="col">
+              <br><br><br>
+              <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+            </div>
+            <div class="col">
+              <br>
+              <div class="circulo_quienes" style="position: absolute;right: 35%;background: url('images/quienes_somos.png') center no-repeat; background-size: cover;"></div>
+            </div>
           </div>
-          <div class="img_qs">
-            <img src="images/quienes_somos.png" alt="">
+          <div class="row" style="background-color: #F0F2EC; height: 300px;">
+            <div class="col">
+              <br>
+              <div class="circulo_por" style="position: absolute;right: 35%; background: url('images/interrogacion.png') center no-repeat; background-size: cover;"></div>
+            </div>
+            <div class="col">
+              <br><br><br>
+              <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+            </div>
           </div>
-        </div>
-        <div class="porque">
-          <div class="texto_porque">
-            <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
-          </div>
-          <div class="img_porque">
-            <img src="images/interrogacion.png" alt="">
-          </div>
-        </div>
-        <div class="para_que">
-          <div class="texto_para_que">
-            <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
-          </div>
-          <div class="img_para_que">
-            <img src="images/para_que.jpg" alt="" style="">
+          <div class="row" style="background-color: white; height: 300px;">
+            <div class="col">
+              <br><br><br>
+              <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+            </div>
+            <div class="col">
+              <br>
+              <div class="circulo_para" style="position: absolute;right: 35%; background: url('images/para_que.jpg') center no-repeat; background-size: cover;"></div>
+            </div>
           </div>
         </div>
       </div>
-        
         <footer class="android-footer mdl-mega-footer">
           <div class="mdl-mega-footer--middle-section">
             <p class="mdl-typography--font-light">EkoSeats S.A de C.V</p>
