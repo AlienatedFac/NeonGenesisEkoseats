@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Ejemplo de Material Design">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>¿Quienes somos?</title>
+    <title>Conocenos</title>
 
     <!-- Estilos -->
     <script
@@ -80,11 +80,11 @@
               if(!isset($_SESSION['id_usuario']) || !isset($_SESSION['nombre_usuario'])){
               ?>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="login.php">Login</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="quienes_somos.php">Preguntas Frecuentes</a>
+              
               <?php
               }else{
               ?>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="quienes_somos.php">Preguntas Frecuentes</a>
+
               <div class="dropdown mdl-navigation__link mdl-typography--text-uppercase" style="">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="">
                   <?php echo $_SESSION['nombre_usuario']; ?>
@@ -156,6 +156,7 @@
                                                                           1px 1px 0 #000;">
           Por las generaciones futuras.</div>
         </div>
+        
         <div class="container" style="min-width: 100% !important;">
           <div class="row" style="background-color: white; height: 300px;">
             <div class="col">

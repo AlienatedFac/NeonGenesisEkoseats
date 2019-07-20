@@ -76,7 +76,7 @@
             <nav class="android-navigation mdl-navigation">
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="index.php">Home</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="login.php">Login</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="quienes_somos.php">Preguntas Frecuentes</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="quienes_somos.php">Conocenos</a>
             </nav>
           </div>
           <span class="android-mobile-title mdl-layout-title">Ekoseats
