@@ -175,7 +175,7 @@
 
       <div class="android-drawer mdl-layout__drawer">
         <span class="mdl-layout-title">
-          <!-- <img class="android-logo-image" src="images/android-logo-white.png"> -->
+        <img class="android-logo-image" src="images/500x125.png">
         </span>
  <nav class="mdl-navigation">
         <span class="mdl-navigation__link" href="">MUEBLES</span>
