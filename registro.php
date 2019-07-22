@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" type="text/css" href="css/login.css">
     <link rel="stylesheet" type="text/css" href="css/registro.css">
+    <link rel="shortcut icon" href="/Ekoseats.ico" />
     
   </head>
    <!-- WhatsHelp.io widget -->
