@@ -189,7 +189,6 @@
             </div>
           </div>
         </div>
-      </div>
         <footer class="android-footer mdl-mega-footer">
           <div class="mdl-mega-footer--middle-section">
             <p class="mdl-typography--font-light">EkoSeats S.A de C.V</p>

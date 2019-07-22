@@ -12,8 +12,8 @@
 
     <!-- Estilos -->
     <script
-    src="https://code.jquery.com/jquery-3.4.1.slim.js"
-    integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI="
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"></script>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -28,6 +28,26 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/material.min.css">
     <link rel="stylesheet" href="css/styles.css">
+
+
+    <!-- alertify -->
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.11.4/build/alertify.min.js"></script>
+
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.4/build/css/alertify.min.css"/>
+    <!-- Default theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.4/build/css/themes/default.min.css"/>
+    <!-- Semantic UI theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.4/build/css/themes/semantic.min.css"/>
+    <!-- Bootstrap theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.4/build/css/themes/bootstrap.min.css"/>
+
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.4/build/css/alertify.rtl.min.css"/>
+    <!-- Default theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.4/build/css/themes/default.rtl.min.css"/>
+    <!-- Semantic UI theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.4/build/css/themes/semantic.rtl.min.css"/>
+    <!-- Bootstrap theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.4/build/css/themes/bootstrap.rtl.min.css"/>
     
   </head>
    <!-- WhatsHelp.io widget -->
@@ -213,39 +233,7 @@
         
         <div class="android-more-section">   
      <!--Aqui Iran las recientes de Ekoseats-->
-          <div class="android-section-title mdl-typography--display-1-color-contrast">Más Recientes</div>
-          <div class="android-card-container mdl-grid">
-            <!-- Aqui el contador $contador va alreves para que cargue los que se van subiendo pero como Yisus no ha subido nada pues vale verga -->
-           <?php
-                    require 'php/conexion.php';
-                    $consulta = $mysqli->query("SELECT * FROM productos ORDER BY id_producto DESC");
-                    $cont = 0;
-                    while($resultado = mysqli_fetch_assoc($consulta)){
-                    ?>
-                          <div class='mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp'>
-                            <div class='mdl-card__media'>
-                              <img src='<?php echo $resultado['imagenes'] ?>'>
-                            </div>
-                            <div class='mdl-card__title'>
-                              <h4 class='mdl-card__title-text'><?php echo $resultado['nombre_producto'] ?></h4>
-                                
-                            </div>
-                            <div class='mdl-card__supporting-text'>
-                            </div>
-                            <div class='mdl-card__actions'>
-                              <i class="fas fa-cart-plus" style="font-size: 2em; color: green;"></i>
-                              <a class='android-link mdl-button mdl-js-button mdl-typography--text-uppercase' href='detalles.php?valor= <?php echo $resultado['id_producto'] ?>'>Ver mas
-                              </a>
-                            </div>
-                          </div>             
-                  <?php
-                      if($cont == 3){
-                        break;
-                      }
-                      $cont++;
-                    }      
-                  ?>   
-          </div>
+          <div id="mas_recientes"></div>
         </div>
 
         <footer class="android-footer mdl-mega-footer">
@@ -278,9 +266,28 @@
         </footer>
       </div>
     </div>
- 
+
+    </body>
+    <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" style="">
+    <div class="modal-dialog modal-sm" style="background-color: white;">
+       <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle"><input type="text" value="" id="nombre" style="border: 0px; background-color: transparent;"></h5>
+          <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button> -->
+        </div>
+        <div class="modal-body">
+          <input type="text" value="<?php echo $_SESSION['id_usuario'] ?>" id="id_usuario" style="display: none;">
+          <input type="number" value="" id="id_producto" style="display: none;">
+          <h5>Cantidad:</h5><input type="num" id="cantidad_producto" value="" placeholder="Cantidad">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal" id="boton_agregar_carrito">Agregar</button>
+        </div>
+    </div>
     <script src="js/material.min.js"></script>
-
-
-  </body>
+    <script src="js/mas_recientes.js"></script>
+    
+</div>
 </html>

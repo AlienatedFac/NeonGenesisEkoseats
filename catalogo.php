@@ -1,9 +1,8 @@
 <!doctype html>
 <html lang="es">
-    <?php
+<?php
     session_start();
-      //Obterner las variable
-      $catalogo1=($_GET['catalogo1']);
+    $catalogo1=$_GET['catalogo1'];
       $nombre_seccion=$catalogo1;
       $imagen="";
       $nombre="";
@@ -11,7 +10,8 @@
       $stock="";
       $precio="";
       $usuario="";
-          
+      $tipo="";
+      
       if ($nombre_seccion == "Salas") {
           $tipo=1;
       } elseif ($nombre_seccion == "Comedores") {
@@ -19,7 +19,6 @@
       } elseif ($nombre_seccion=="Otros") {
           $tipo=3;
       }
-// Mostar las variables
 ?>
   <head>
     <meta charset="utf-8">
@@ -28,12 +27,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Ekoseats-<?php echo $catalogo1; ?></title>
 
-    <!-- Estilos -->
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=es" rel="stylesheet">
     <script src="https://kit.fontawesome.com/2cf79d88f0.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/material.min.css">
     <link rel="stylesheet" href="css/styles.css">
+
+
+    <!-- alertify -->
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.11.4/build/alertify.min.js"></script>
+
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.4/build/css/alertify.min.css"/>
+    <!-- Default theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.4/build/css/themes/default.min.css"/>
+    <!-- Semantic UI theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.4/build/css/themes/semantic.min.css"/>
+    <!-- Bootstrap theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.4/build/css/themes/bootstrap.min.css"/>
+
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.4/build/css/alertify.rtl.min.css"/>
+    <!-- Default theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.4/build/css/themes/default.rtl.min.css"/>
+    <!-- Semantic UI theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.4/build/css/themes/semantic.rtl.min.css"/>
+    <!-- Bootstrap theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.4/build/css/themes/bootstrap.rtl.min.css"/>
     
   </head>
        <!-- WhatsHelp.io widget -->
@@ -191,56 +221,9 @@
         </nav>
       </div>
       <div class="android-content mdl-layout__content" style="background-color: #eee7e5 !important;">
-        <div class="android-more-section">
-          <div class="android-section-title" style="color: black; font-size: 40px;"><?php echo $nombre_seccion; ?></div>
-          <div class="android-card-container mdl-grid">
-              <?php
-                  $conexion = mysqli_connect("localhost", "root", "", "ekoseat_bdd");
-                    for($contador=1;$contador<100;$contador++){
-                        $consulta =$conexion->query("SELECT * from productos WHERE id_producto= $contador AND tipo_producto=$tipo");
-                        if($resultado = mysqli_fetch_array($consulta)){
-                           //Guardo los datos de la BD en las variables de php
-                           $imagen = $resultado["id_producto"];
-                           $nombre = $resultado["nombre_producto"];
-                           $descripcion = $resultado["descripcion_producto"];
-                           $stock = $resultado["stock_producto"];
-                           $precio = $resultado["precio_producto"];
-                           $ruta = $resultado["imagenes"];
-                           $tipo= $resultado["tipo_producto"];
-                           $usuario= $resultado["id_usuario"];
-                        }
-                        if($imagen!="")
-                        { 
-                          $valor=$imagen;
-                        ?>
-                          <div class='mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp'>
-                            <div class='mdl-card__media'>
-                              <img src='<?php echo $ruta ?>'>
-                            </div>
-                            <div class='mdl-card__title'>
-                              <h4 class='mdl-card__title-text'><?php echo $nombre ?></h4>
-                                
-                            </div>
-                            <div class='mdl-card__supporting-text'>
-                            </div>
-                            <div class='mdl-card__actions'>
-                              <i class="fas fa-cart-plus" style="font-size: 2em; color: green;"></i>
-                              <a class='android-link mdl-button mdl-js-button mdl-typography--text-uppercase' href='detalles.php?valor= <?php echo $imagen ?>' >Ver mas
-                              </a>
-                            </div>
-                          </div>            
-                        <?php
-                            $imagen = "";
-                            $nombre = "";
-                            $descripcion = "";
-                            $precio = "";
-                        } 
-                  }      
-              
-                ?>     
-          </div>
-        </div>
-
+        <input type="text" value="<?php echo $nombre_seccion; ?>" id="tipo" style="display: none;">
+        <div id="carrito_catalogo"></div>
+      
         <footer class="android-footer mdl-mega-footer">
           <div class="mdl-mega-footer--top-section">
             <div class="mdl-mega-footer--left-section">
@@ -271,18 +254,30 @@
         </footer>
       </div>
     </div>
+
+    <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" style="">
+      <div class="modal-dialog modal-sm" style="background-color: white;">
+         <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle"><input type="text" value="" id="nombre" style="border: 0px; background-color: transparent;"></h5>
+            <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button> -->
+          </div>
+          <div class="modal-body">
+            <input type="text" value="<?php echo $_SESSION['id_usuario'] ?>" id="id_usuario" style="display: none;">
+            <input type="number" value="" id="id_producto" style="display: none;">
+            <h5>Cantidad:</h5><input type="num" id="cantidad_producto" value="" placeholder="Cantidad">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal" id="boton_agregar_carrito">Agregar</button>
+          </div>
+      </div>
+    </div>
  
     <script src="js/material.min.js"></script>
+    <script src="js/catalogo.js"></script>
 
 
   </body>
 </html>
-<!--
-<h2 style="text-align:center">Product Card</h2>
-<div class="card">
-  <img src="/w3images/jeans3.jpg" alt="Denim Jeans" style="width:100%">
-  <h1>Tailored Jeans</h1>
-  <p class="price">$19.99</p>
-  <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
-  <p><button>Add to Cart</button></p>
-</div>-->
