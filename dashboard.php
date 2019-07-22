@@ -140,11 +140,13 @@
          <?php $catalogo1 = "Salas";?> <a class="mdl-navigation__link" href="catalogo.php?catalogo1=<?php echo $catalogo1 ?>">Salas</a>
          <?php $catalogo1 = "Sillas";?> <a class="mdl-navigation__link" href="catalogo.php?catalogo1=<?php echo $catalogo1 ?>">Sillas</a>
          <?php $catalogo1 = "Centros";?> <a class="mdl-navigation__link" href="catalogo.php?catalogo1=<?php echo $catalogo1 ?>">Centro de Sala</a>
+         <?php $catalogo1 = "Mesas";?> <a class="mdl-navigation__link" href="catalogo.php?catalogo1=<?php echo $catalogo1 ?>">Mesas</a>
         <span class="mdl-navigation__link" href="">ACCESORIOS</span>    
         <?php $catalogo1 = "Accesorios";?> <a class="mdl-navigation__link" href="catalogo.php?catalogo1=<?php echo $catalogo1 ?>">Accesorios</a>
-        <span class="mdl-navigation__link" href="">CONSUMIBLES</span>    
-          <a class="mdl-navigation__link" href=""></a>
-          <a class="mdl-navigation__link" href=""></a>
+          <span class="mdl-navigation__link" href="">EKOSEATS</span>    
+          <a class="mdl-navigation__link" href="index.php">Home</a>
+          <a class="mdl-navigation__link" href="login.php">Login</a>
+          <a class="mdl-navigation__link" href="quienes_somos.php">Conocenos</a>
           <div class="android-drawer-separator"></div>
      <span class="mdl-navigation__link" href="">Recursos</span>
           <a class="mdl-navigation__link" href="">Blog Oficial</a>
