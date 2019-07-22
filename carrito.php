@@ -166,8 +166,13 @@
                 </div>
                 <div class="android-customized-section-image"></div>
               </div>
+              
               <?php
               }else{
+                  ?>
+            <div class="android-section-title mdl-typography--display-1-color-contrast">Mi Carrito</div>
+            <div class="android-card-container mdl-grid">
+            <?php
                   
            
                     require 'php/conexion.php';
@@ -177,8 +182,8 @@
                   $total=0;
                     while($resultado = mysqli_fetch_assoc($consulta)){
                     ?>
-                         <div class="android-section-title mdl-typography--display-1-color-contrast">Mi Carrito</div>
-                         <div class="android-card-container mdl-grid">
+                         
+                         
                           <div class='mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp'>
                             <div class='mdl-card__media'>
                               <img src='<?php echo $resultado['imagenes'] ?>'>
@@ -197,7 +202,7 @@
                               </a>
                             </div>
                           </div>   
-                        </div>
+                        
             
                   <?php
                     $total=$total+$subtotal;  
@@ -208,7 +213,7 @@
                     } else{
                         $envio_todo=200;
                     }?>
-                    
+                   </div> 
                   <div class="android-customized-section-text">
                     <div  align="center" class="mdl-typography--font-light mdl-typography--display-1-color-contrast">Comprar Todo! :D</div>
                     <p class="mdl-typography--font-light">
