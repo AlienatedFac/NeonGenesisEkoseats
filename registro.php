@@ -88,15 +88,22 @@
           <form action="catalogo.php" method="POST">
         <nav class="mdl-navigation">
         <span class="mdl-navigation__link" href="">MUEBLES</span>
+<!-- ?php $catalogo1 = "Salas";?>-->
          <?php $catalogo1 = "Salas";?> <a class="mdl-navigation__link" href="catalogo.php?catalogo1=<?php echo $catalogo1 ?>">Salas</a>
-         <?php $catalogo1 = "Comedores";?> <a class="mdl-navigation__link" href="catalogo.php?catalogo1=<?php echo $catalogo1 ?>">Comedores</a>
-         <?php $catalogo1 = "Otros";?> <a class="mdl-navigation__link" href="catalogo.php?catalogo1=<?php echo $catalogo1 ?>">Otros</a>
+         <?php $catalogo1 = "Sillas";?> <a class="mdl-navigation__link" href="catalogo.php?catalogo1=<?php echo $catalogo1 ?>">Sillas</a>
+         <?php $catalogo1 = "Centros";?> <a class="mdl-navigation__link" href="catalogo.php?catalogo1=<?php echo $catalogo1 ?>">Centro de Sala</a>
         <span class="mdl-navigation__link" href="">ACCESORIOS</span>    
-          <a class="mdl-navigation__link" href=""></a>
-          <a class="mdl-navigation__link" href=""></a>
+        <?php $catalogo1 = "Accesorios";?> <a class="mdl-navigation__link" href="catalogo.php?catalogo1=<?php echo $catalogo1 ?>">Accesorios</a>
         <span class="mdl-navigation__link" href="">CONSUMIBLES</span>    
           <a class="mdl-navigation__link" href=""></a>
           <a class="mdl-navigation__link" href=""></a>
+          <div class="android-drawer-separator"></div>
+     <span class="mdl-navigation__link" href="">Recursos</span>
+          <a class="mdl-navigation__link" href="">Blog Oficial</a>
+          <a class="mdl-navigation__link" href="">Ekoseats en Google+</a>
+          <a class="mdl-navigation__link" href="">Ekoseats en Twitter</a>
+          <a class="mdl-navigation__link" href="">Ekoseats en Facebook</a>
+     
           <div class="android-drawer-separator"></div>
             
           <!-- <span class="mdl-navigation__link" href="">Versiones</span>
@@ -105,15 +112,12 @@
           <a class="mdl-navigation__link" href="">Jelly Bean 4.3</a>
           <a class="mdl-navigation__link" href="">Historia de Android</a>
           <div class="android-drawer-separator"></div>
-          <span class="mdl-navigation__link" href="">Recursos</span>
-          <a class="mdl-navigation__link" href="">Blog Oficial</a>
-          <a class="mdl-navigation__link" href="">Android en Google+</a>
-          <a class="mdl-navigation__link" href="">Android en Twitter</a>
-          <div class="android-drawer-separator"></div>
+          
           <span class="mdl-navigation__link" href="">Para Desarrolladores</span>
           <a class="mdl-navigation__link" href="">Recursos para desarrollo de Apps</a>
           <a class="mdl-navigation__link" href="">Android Proyecto Open Source</a>
           <a class="mdl-navigation__link" href="">Android SDK</a> -->
+     
             
         </nav>
         </form>
