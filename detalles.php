@@ -9,6 +9,7 @@ $valor=($_GET['valor']);
 require 'php/conexion.php';
 $consulta = $mysqli->query("SELECT * FROM productos WHERE id_producto = ".$valor);
 $resultado = mysqli_fetch_array($consulta);
+$id=$resultado['id_usuario'];
 
 // Mostar las variables
 ?>
@@ -238,6 +239,38 @@ $resultado = mysqli_fetch_array($consulta);
                  <?php
                     require 'php/conexion.php';
                     $consulta = $mysqli->query("SELECT * FROM productos WHERE tipo_producto= $tipo ORDER BY id_producto DESC");
+                    $cont = 0;
+                    while($resultado = mysqli_fetch_assoc($consulta)){
+                    ?>
+                        <div class='mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp'>
+                            <div class='mdl-card__media'>
+                              <img src='<?php echo $resultado['imagenes'] ?>' height="200" width="180">
+                            </div>
+                            <div class='mdl-card__title'>
+                              <h4 class='mdl-card__title-text'><?php echo $resultado['nombre_producto'] ?></h4>
+                                
+                            </div>
+                            <div class='mdl-card__supporting-text'>
+                            </div>
+                            <div class='mdl-card__actions'>
+                              <i class="fas fa-cart-plus" style="font-size: 2em; color: green;"></i>
+                              <a class='android-link mdl-button mdl-js-button mdl-typography--text-uppercase' href='detalles.php?valor= <?php echo $resultado['id_producto'] ?>'>Ver mas
+                              </a>
+                            </div>
+                          </div>             
+                  <?php
+                      if($cont == 3){
+                        break;
+                      }
+                      $cont++;
+                    }      
+                  ?>  
+          </div>
+         <div class="android-section-title mdl-typography--display-1-color-contrast">Mas del Vendedor</div>
+          <div class="android-card-container mdl-grid">
+                 <?php
+                    require 'php/conexion.php';
+                    $consulta = $mysqli->query("SELECT * FROM productos WHERE id_usuario= $id ORDER BY id_producto DESC");
                     $cont = 0;
                     while($resultado = mysqli_fetch_assoc($consulta)){
                     ?>
