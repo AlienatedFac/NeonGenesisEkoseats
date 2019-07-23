@@ -200,9 +200,9 @@ $id=$resultado['id_usuario'];
               Envio: <?php echo $datoenvio ?>
               </p>
               <p>
-                <a class="mdl-typography--font-regular mdl-typography--text-uppercase android-alt-link" onclick="myFunction()" href="">
+                <!--<a class="mdl-typography--font-regular mdl-typography--text-uppercase android-alt-link" onclick="myFunction()" href="">
                   Agregar al Carrito&nbsp;<i class="material-icons">chevron_right</i>
-                </a>
+                </a>-->
                   
                 
               </p>
