@@ -124,10 +124,7 @@
           <a class="mdl-navigation__link" href="quienes_somos.php">Conocenos</a>
           <div class="android-drawer-separator"></div>
      <span class="mdl-navigation__link" href="">Recursos</span>
-          <a class="mdl-navigation__link" href="">Blog Oficial</a>
-          <a class="mdl-navigation__link" href="">Ekoseats en Google+</a>
-          <a class="mdl-navigation__link" href="">Ekoseats en Twitter</a>
-          <a class="mdl-navigation__link" href="">Ekoseats en Facebook</a>
+          <a class="mdl-navigation__link" href="https://www.facebook.com/Ekoseats-324124578524175/?ref=bookmarks">Ekoseats en Facebook</a>
      
           <div class="android-drawer-separator"></div>
             
@@ -167,7 +164,7 @@
           <div class="row" style="background-color: white; height: 300px;">
             <div class="col">
               <br><br><br>
-              <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+              <span>Ekoseats se preocupa por el medio ambiente, tratamos de comercializar con productos que no afecten el medio ambiente satisfaciendo las necesidades de los usuarios ayudando asi a la tierra </span>
             </div>
             <div class="col">
               <br>
@@ -181,13 +178,13 @@
             </div>
             <div class="col">
               <br><br><br>
-              <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+              <span>Los problemas que ocasiona el hombre al medio ambiente ya no son desconocidos. Es vital reciclar y reducir el impacto que tiene el consumismo en el planeta. Eso nos lleva a la importancia de los productos ecológicos que son resultado de estas nuevas formas de producir bienes y servicios. Hay buenas razones por las que debemos darles prioridad. No son solo por valorar a la naturaleza. El eje fundamental es nuestro propio bienestar.</span>
             </div>
           </div>
           <div class="row" style="background-color: white; height: 300px;">
             <div class="col">
               <br><br><br>
-              <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+              <span>Un problema que se ha manifestado con la modernidad, es la creación de productos baratos, con componentes que perjudican la salud. Ya sea que se trate de químicos, plásticos o cualquier otro producto, en muchos casos estos han provocado enfermedades graves con tratamientos delicados. Por eso es que debes recordar la importancia de los productos ecológicos. Porque generalmente no contienen nada que sea negativo para tu salud o la de tu familia.</span>
             </div>
             <div class="col">
               <br>

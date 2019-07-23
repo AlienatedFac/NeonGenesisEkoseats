@@ -9,10 +9,13 @@ $valor=($_GET['valor']);
 require 'php/conexion.php';
 $consulta = $mysqli->query("SELECT * FROM productos WHERE id_producto = ".$valor);
 $resultado = mysqli_fetch_array($consulta);
+$id=$resultado['id_usuario'];
 
 // Mostar las variables
 ?>
   <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Ejemplo de Material Design">
@@ -140,10 +143,7 @@ $resultado = mysqli_fetch_array($consulta);
           <a class="mdl-navigation__link" href="quienes_somos.php">Conocenos</a>
           <div class="android-drawer-separator"></div>
      <span class="mdl-navigation__link" href="">Recursos</span>
-          <a class="mdl-navigation__link" href="">Blog Oficial</a>
-          <a class="mdl-navigation__link" href="">Ekoseats en Google+</a>
-          <a class="mdl-navigation__link" href="">Ekoseats en Twitter</a>
-          <a class="mdl-navigation__link" href="">Ekoseats en Facebook</a>
+          <a class="mdl-navigation__link" href="https://www.facebook.com/Ekoseats-324124578524175/?ref=bookmarks">Ekoseats en Facebook</a>
      
           <div class="android-drawer-separator"></div>
             
@@ -219,7 +219,7 @@ $resultado = mysqli_fetch_array($consulta);
 <input type="hidden" name="no_shipping" value="2">
 <input type="hidden" name="undefined_quantity" value="1">
 <input type="hidden" name="rm" value="1">
-<input type="hidden" name="return" value="http://127.0.0.1/NeonGenesisEkoseats/sucess.php">
+<input type="hidden" name="return" value="http://127.0.0.1/NeonGenesisEkoseats/sucess.php?valor=<?php echo $resultado['id_producto'] ?>&valor1=<?php echo $_SESSION['id_usuario'] ?>">
 <input type="hidden" name="cancel_return" value="http://127.0.0.1/NeonGenesisEkoseats/cancel.php">
 <input type="hidden" name="shipping" value="<?php echo $envio ?>">
 <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHosted">
@@ -238,6 +238,38 @@ $resultado = mysqli_fetch_array($consulta);
                  <?php
                     require 'php/conexion.php';
                     $consulta = $mysqli->query("SELECT * FROM productos WHERE tipo_producto= $tipo ORDER BY id_producto DESC");
+                    $cont = 0;
+                    while($resultado = mysqli_fetch_assoc($consulta)){
+                    ?>
+                        <div class='mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp'>
+                            <div class='mdl-card__media'>
+                              <img src='<?php echo $resultado['imagenes'] ?>' height="200" width="180">
+                            </div>
+                            <div class='mdl-card__title'>
+                              <h4 class='mdl-card__title-text'><?php echo $resultado['nombre_producto'] ?></h4>
+                                
+                            </div>
+                            <div class='mdl-card__supporting-text'>
+                            </div>
+                            <div class='mdl-card__actions'>
+                              <i class="fas fa-cart-plus" style="font-size: 2em; color: green;"></i>
+                              <a class='android-link mdl-button mdl-js-button mdl-typography--text-uppercase' href='detalles.php?valor= <?php echo $resultado['id_producto'] ?>'>Ver mas
+                              </a>
+                            </div>
+                          </div>             
+                  <?php
+                      if($cont == 3){
+                        break;
+                      }
+                      $cont++;
+                    }      
+                  ?>  
+          </div>
+         <div class="android-section-title mdl-typography--display-1-color-contrast">Mas del Vendedor</div>
+          <div class="android-card-container mdl-grid">
+                 <?php
+                    require 'php/conexion.php';
+                    $consulta = $mysqli->query("SELECT * FROM productos WHERE id_usuario= $id ORDER BY id_producto DESC");
                     $cont = 0;
                     while($resultado = mysqli_fetch_assoc($consulta)){
                     ?>

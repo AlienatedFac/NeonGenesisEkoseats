@@ -1,5 +1,14 @@
 <?php 
   session_start();
+  $valor=$_GET['valor'];
+  $valor1=$_GET['valor1'];
+  $hora = date('m/d/Y g:ia');
+	require 'php/conexion.php';
+
+	$sql="INSERT INTO compras(id_usuario,id_producto,hora)  
+    values('$valor1','$valor','$hora')";
+
+	$mysqli->query($sql);
 ?>
 <!doctype html>
 <html lang="es">
@@ -126,10 +135,7 @@
           <a class="mdl-navigation__link" href="quienes_somos.php">Conocenos</a>
           <div class="android-drawer-separator"></div>
      <span class="mdl-navigation__link" href="">Recursos</span>
-          <a class="mdl-navigation__link" href="">Blog Oficial</a>
-          <a class="mdl-navigation__link" href="">Ekoseats en Google+</a>
-          <a class="mdl-navigation__link" href="">Ekoseats en Twitter</a>
-          <a class="mdl-navigation__link" href="">Ekoseats en Facebook</a>
+          <a class="mdl-navigation__link" href="https://www.facebook.com/Ekoseats-324124578524175/?ref=bookmarks">Ekoseats en Facebook</a>
      
           <div class="android-drawer-separator"></div>
             
@@ -159,6 +165,7 @@
             <h2><span>Genial!</span><br>Tu compra se ha realizado con exito</h2>
             <p>Tu producto sera enviado lo mas pronto posible a la direccion seleccionada</p>
             <a  align="center" href="index.php">Presiona Aqui Para Seguir Comprando</a>
+            <a  align="center"><?php echo $valor ?></a>
         </div>
         </div>
 

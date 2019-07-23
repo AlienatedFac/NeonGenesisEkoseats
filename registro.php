@@ -101,10 +101,7 @@
           <a class="mdl-navigation__link" href="quienes_somos.php">Conocenos</a>
           <div class="android-drawer-separator"></div>
      <span class="mdl-navigation__link" href="">Recursos</span>
-          <a class="mdl-navigation__link" href="">Blog Oficial</a>
-          <a class="mdl-navigation__link" href="">Ekoseats en Google+</a>
-          <a class="mdl-navigation__link" href="">Ekoseats en Twitter</a>
-          <a class="mdl-navigation__link" href="">Ekoseats en Facebook</a>
+          <a class="mdl-navigation__link" href="https://www.facebook.com/Ekoseats-324124578524175/?ref=bookmarks">Ekoseats en Facebook</a>
      
           <div class="android-drawer-separator"></div>
             

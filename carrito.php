@@ -126,10 +126,7 @@
           <a class="mdl-navigation__link" href="quienes_somos.php">Conocenos</a>
           <div class="android-drawer-separator"></div>
      <span class="mdl-navigation__link" href="">Recursos</span>
-          <a class="mdl-navigation__link" href="">Blog Oficial</a>
-          <a class="mdl-navigation__link" href="">Ekoseats en Google+</a>
-          <a class="mdl-navigation__link" href="">Ekoseats en Twitter</a>
-          <a class="mdl-navigation__link" href="">Ekoseats en Facebook</a>
+          <a class="mdl-navigation__link" href="https://www.facebook.com/Ekoseats-324124578524175/?ref=bookmarks">Ekoseats en Facebook</a>
      
           <div class="android-drawer-separator"></div>
             
@@ -181,7 +178,7 @@
                   
            
                     require 'php/conexion.php';
-                    $consulta = $mysqli->query("SELECT carrito.id_usuario, carrito.id_producto, productos.nombre_producto, productos.imagenes, productos.precio_producto, productos.id_usuario, carrito.cantidad FROM carrito
+                    $consulta = $mysqli->query("SELECT  carrito.id, carrito.id_usuario, carrito.id_producto, productos.nombre_producto, productos.imagenes, productos.precio_producto, productos.id_usuario, carrito.cantidad FROM carrito
                       INNER JOIN productos ON carrito.id_producto = productos.id_producto
                       WHERE carrito.id_usuario =".$_SESSION['id_usuario']);
                   $total=0;
@@ -204,6 +201,7 @@
                           </div>
                             <div class='mdl-card__actions'>
                               <a class='android-link mdl-button mdl-js-button mdl-typography--text-uppercase' href='detalles.php?valor= <?php echo $resultado['id_producto'] ?>' >Ver mas
+                              </a><a class='android-link mdl-button mdl-js-button mdl-typography--text-uppercase' href='deletecarrito.php?valor= <?php echo $resultado['id'] ?>' >Eliminar
                               </a>
                             </div>
                           </div>   

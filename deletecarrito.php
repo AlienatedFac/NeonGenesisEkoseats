@@ -1,6 +1,12 @@
 <?php 
-	session_start();
- ?>
+  session_start();
+  $valor=$_GET['valor'];
+	require 'php/conexion.php';
+
+	$sql="DELETE  from carrito where id=".$valor;
+
+	$mysqli->query($sql);
+?>
 <!doctype html>
 <html lang="es">
   <head>
@@ -12,8 +18,8 @@
 
     <!-- Estilos -->
     <script
-    src="https://code.jquery.com/jquery-3.4.1.js"
-    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    src="https://code.jquery.com/jquery-3.4.1.slim.js"
+    integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI="
     crossorigin="anonymous"></script>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -28,28 +34,6 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/material.min.css">
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="shortcut icon" href="/Ekoseats.ico" />
-
-
-
-    <!-- alertify -->
-    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.11.4/build/alertify.min.js"></script>
-
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.4/build/css/alertify.min.css"/>
-    <!-- Default theme -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.4/build/css/themes/default.min.css"/>
-    <!-- Semantic UI theme -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.4/build/css/themes/semantic.min.css"/>
-    <!-- Bootstrap theme -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.4/build/css/themes/bootstrap.min.css"/>
-
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.4/build/css/alertify.rtl.min.css"/>
-    <!-- Default theme -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.4/build/css/themes/default.rtl.min.css"/>
-    <!-- Semantic UI theme -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.4/build/css/themes/semantic.rtl.min.css"/>
-    <!-- Bootstrap theme -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.4/build/css/themes/bootstrap.rtl.min.css"/>
     
   </head>
    <!-- WhatsHelp.io widget -->
@@ -86,9 +70,6 @@
           </span>
           <!-- Agregamos un espacio entre el logo de y el menú -->
           <div class="android-header-spacer mdl-layout-spacer"></div>
-          <div class="android-search-box mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right mdl-textfield--full-width">
-            <a href="carrito.php" title=""><i class="fas fa-shopping-cart" style="color: green; font-size: 2em;"></i></a>
-          </div>
           <!-- Menú -->
           <div class="android-navigation-container">
             <nav class="android-navigation mdl-navigation">
@@ -107,7 +88,7 @@
                   <?php echo $_SESSION['nombre_usuario']; ?>
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="dashboard.php">Dashboard</a><br>
+                  <a class="dropdown-item" href="#">Dashboard</a><br>
                   <a class="dropdown-item" href="php/cerrar_sesion.php">Cerrar Sesion</a>
                 </div>
               </div>
@@ -133,19 +114,19 @@
 
       <div class="android-drawer mdl-layout__drawer">
         <span class="mdl-layout-title">
-          <img class="android-logo-image" src="images/500x125.png">
+         <img class="android-logo-image" src="images/500x125.png">
         </span>
           <form action="catalogo.php" method="POST">
-         <nav class="mdl-navigation">
+        <nav class="mdl-navigation">
         <span class="mdl-navigation__link" href="">MUEBLES</span>
 <!-- ?php $catalogo1 = "Salas";?>-->
          <?php $catalogo1 = "Salas";?> <a class="mdl-navigation__link" href="catalogo.php?catalogo1=<?php echo $catalogo1 ?>">Salas</a>
          <?php $catalogo1 = "Sillas";?> <a class="mdl-navigation__link" href="catalogo.php?catalogo1=<?php echo $catalogo1 ?>">Sillas</a>
          <?php $catalogo1 = "Centros";?> <a class="mdl-navigation__link" href="catalogo.php?catalogo1=<?php echo $catalogo1 ?>">Centro de Sala</a>
-             <?php $catalogo1 = "Mesas";?> <a class="mdl-navigation__link" href="catalogo.php?catalogo1=<?php echo $catalogo1 ?>">Mesas</a>
+            <?php $catalogo1 = "Mesas";?> <a class="mdl-navigation__link" href="catalogo.php?catalogo1=<?php echo $catalogo1 ?>">Mesas</a>
         <span class="mdl-navigation__link" href="">ACCESORIOS</span>    
         <?php $catalogo1 = "Accesorios";?> <a class="mdl-navigation__link" href="catalogo.php?catalogo1=<?php echo $catalogo1 ?>">Accesorios</a>
-          <span class="mdl-navigation__link" href="">EKOSEATS</span>    
+        <span class="mdl-navigation__link" href="">EKOSEATS</span>    
           <a class="mdl-navigation__link" href="index.php">Home</a>
           <a class="mdl-navigation__link" href="login.php">Login</a>
           <a class="mdl-navigation__link" href="quienes_somos.php">Conocenos</a>
@@ -173,81 +154,20 @@
       </div>
 
       <div class="android-content mdl-layout__content">
-        <a name="top"></a>
-        <div class="android-be-together-section mdl-typography--text-center">
-          <div class="android-font android-slogan" style="color: white; text-shadow:
-                                                                        -1px -1px 0 #000,  
-                                                                          1px -1px 0 #000,
-                                                                          -1px 1px 0 #000,
-                                                                          1px 1px 0 #000;">
-          Por un mundo mejor.</div>
-          <div class="android-font android-sub-slogan" style="color: white;
-                                                              text-shadow:-1px -1px 0 #000,  
-                                                              1px -1px 0 #000,
-                                                              -1px 1px 0 #000,
-                                                              1px 1px 0 #000;">
-          Por las generaciones futuras.</div>
-          <div class="android-font android-create-character">
-            <a href=""></a>
-          </div>
+        <a name="top"></a>       
+        <div class="android-more-section">
+            
 
-          <a href="#screens">
-            <button class="android-fab mdl-button mdl-button--colored mdl-js-button mdl-button--fab mdl-js-ripple-effect">
-              <i class="material-icons">expand_more</i>
-            </button>
-          </a>
+        <div class=&quot;container&quot;>
+            <h2><span>Genial!</span><br>Quiataste el articulo con exito</h2>
+            <p>Para regresar presiona el boton</p>
+            <a  align="center" href="carrito.php">Presiona Aqui Para Seguir Comprando</a>
         </div>
-        <div class="android-screen-section mdl-typography--text-center">
-          <a name="screens"></a>
-          <div class="mdl-typography--display-1-color-contrast">Productos de todos los tamaños, materiales y colores.</div>
-          <!--<div class="android-screens">
-            <div class="android-wear android-screen">
-              <a class="android-image-link" href="">
-                <img class="android-screen-image" src="images/wear-silver-on.png">
-                <img class="android-screen-image" src="images/wear-black-on.png">
-              </a>
-              <a class="android-link mdl-typography--font-regular mdl-typography--text-uppercase" href="">Android Wear</a>
-            </div>
-            <div class="android-phone android-screen">
-              <a class="android-image-link" href="">
-                <img class="android-screen-image" src="images/nexus6-on.jpg">
-              </a>
-              <a class="android-link mdl-typography--font-regular mdl-typography--text-uppercase" href="">Móviles</a>
-            </div>
-            <div class="android-tablet android-screen">
-              <a class="android-image-link" href="">
-                <img class="android-screen-image" src="images/nexus9-on.jpg">
-              </a>
-              <a class="android-link mdl-typography--font-regular mdl-typography--text-uppercase" href="">Tablets</a>
-            </div>
-            <div class="android-tv android-screen">
-              <a class="android-image-link" href="">
-                <img class="android-screen-image" src="images/tv-on.jpg">
-              </a>
-              <a class="android-link mdl-typography--font-regular mdl-typography--text-uppercase" href="">Android TV</a>
-            </div>
-            <div class="android-auto android-screen">
-              <a class="android-image-link" href="">
-                <img class="android-screen-image" src="images/auto-on.jpg">
-              </a>
-              <a class="android-link mdl-typography--font-regular mdl-typography--text-uppercase mdl-typography--text-left" href="">Muy Pronto: Android Auto</a>
-            </div>
-          </div>-->
-        </div>
-        
-        <div class="android-more-section">   
-     <!--Aqui Iran las recientes de Ekoseats-->
-          <div id="mas_recientes"></div>
         </div>
 
         <footer class="android-footer mdl-mega-footer">
           <div class="mdl-mega-footer--top-section">
             <div class="mdl-mega-footer--left-section">
-              <!--<button class="mdl-mega-footer--social-btn">G +</button>
-              &nbsp;
-              <button class="mdl-mega-footer--social-btn">F</button>
-              &nbsp;
-              <button class="mdl-mega-footer--social-btn">T</button>-->
             </div>
             <div class="mdl-mega-footer--right-section">
               <a class="mdl-typography--font-light" href="#top">
@@ -270,28 +190,9 @@
         </footer>
       </div>
     </div>
-
-    </body>
-    <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" style="">
-    <div class="modal-dialog modal-sm" style="background-color: white;">
-       <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle"><input type="text" value="" id="nombre" style="border: 0px; background-color: transparent;"></h5>
-          <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button> -->
-        </div>
-        <div class="modal-body">
-          <input type="text" value="<?php echo $_SESSION['id_usuario'] ?>" id="id_usuario" style="display: none;">
-          <input type="number" value="" id="id_producto" style="display: none;">
-          <h5>Cantidad:</h5><input type="num" id="cantidad_producto" value="" placeholder="Cantidad">
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn btn-primary" data-dismiss="modal" id="boton_agregar_carrito">Agregar</button>
-        </div>
-    </div>
+ 
     <script src="js/material.min.js"></script>
-    <script src="js/mas_recientes.js"></script>
-    
-</div>
+
+
+  </body>
 </html>
