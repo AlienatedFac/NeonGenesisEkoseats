@@ -1,5 +1,11 @@
 <?php 
   session_start();
+  $valor=$_GET['valor'];
+	require 'php/conexion.php';
+
+	$sql="DELETE  from carrito where id=".$valor;
+
+	$mysqli->query($sql);
 ?>
 <!doctype html>
 <html lang="es">
@@ -154,107 +160,12 @@
         <a name="top"></a>       
         <div class="android-more-section">
             
-     <!--Aqui Iran las recientes de Ekoseats-->
-        
-         <?php
-   
-              if(!isset($_SESSION['id_usuario']) || !isset($_SESSION['nombre_usuario'])){
-              ?>
-                 <div class="android-customized-section">
-                <div class="android-customized-section-text">
-                  <div class="mdl-typography--font-light mdl-typography--display-1-color-contrast">UPS!</div>
-                  <p class="mdl-typography--font-light">
-                    Parece que no has iniciado sesion :c, para agregar cosas y ver tu carrito 
-                    <br>
-                    <a href="login.php" class="android-link mdl-typography--font-light">inicia sesion aqui!.</a>
-                  </p>
-                </div>
-                <div class="android-customized-section-image"></div>
-              </div>
-              
-              <?php
-              }else{
-                  ?>
-            <div class="android-section-title mdl-typography--display-1-color-contrast">Mi Carrito</div>
-            <div class="android-card-container mdl-grid">
-            <?php
-                  
-           
-                    require 'php/conexion.php';
-                    $consulta = $mysqli->query("SELECT  carrito.id, carrito.id_usuario, carrito.id_producto, productos.nombre_producto, productos.imagenes, productos.precio_producto, productos.id_usuario, carrito.cantidad FROM carrito
-                      INNER JOIN productos ON carrito.id_producto = productos.id_producto
-                      WHERE carrito.id_usuario =".$_SESSION['id_usuario']);
-                  $total=0;
-                    while($resultado = mysqli_fetch_assoc($consulta)){
-                    ?>
-                         
-                         
-                          <div class='mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp'>
-                            <div class='mdl-card__media'>
-                              <img src='<?php echo $resultado['imagenes'] ?>' height="200" width="180">
-                            </div>
-                            <div class='mdl-card__title'>
-                              <h4 class='mdl-card__title-text'><?php echo $resultado['nombre_producto'] ?></h4>
-                                
-                            </div>
-                         <div class="mdl-card__supporting-text">
-                          <span class="mdl-typography--font-light mdl-typography--subhead">Cantidad: <?php echo $resultado['cantidad'] ?> </span>
-                             <?php $subtotal= $resultado['cantidad']*$resultado['precio_producto']; ?>
-                          <span class="mdl-typography--font-light mdl-typography--subhead">Total: $ <?php echo $subtotal ?> </span>
-                          </div>
-                            <div class='mdl-card__actions'>
-                              <a class='android-link mdl-button mdl-js-button mdl-typography--text-uppercase' href='detalles.php?valor= <?php echo $resultado['id_producto'] ?>' >Ver mas
-                              </a><a class='android-link mdl-button mdl-js-button mdl-typography--text-uppercase' href='deletecarrito.php?valor= <?php echo $resultado['id'] ?>' >Eliminar
-                              </a>
-                            </div>
-                          </div>   
-                        
-            
-                  <?php
-                    $total=$total+$subtotal;  
-                  }
-                  if($total>=2500)
-                    {
-                        $envio_todo=0;
-                    } else{
-                        $envio_todo=200;
-                    }?>
-                   </div> 
-                  <div class="android-customized-section-text">
-                    <div  align="center" class="mdl-typography--font-light mdl-typography--display-1-color-contrast">Comprar Todo! :D</div>
-                    <p class="mdl-typography--font-light">
-                        <!--
-                      Ponga las cosas que usted desee a la derecha en la pantalla principal: las últimas noticias, el clima o una galeria con sus fotos recientes.
-                      <br>
-                      <a href="" class="android-link mdl-typography--font-light">Busca productos de interes.</a>
-      -->
-                    </p>
-                   <div align="center" class="Comprar">
-                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                    <input type="hidden" name="cmd" value="_xclick">
-                    <input type="hidden" name="business" value="substratum21@gmail.com">
-                    <input type="hidden" name="lc" value="MX">
-                    <input type="hidden" name="item_name" value="<?php Carrito ?>">
-                    <input type="hidden" name="item_number" value="Id">
-                    <input type="hidden" name="amount" value="<?php echo $total ?>.00">
-                    <input type="hidden" name="currency_code" value="MXN">
-                    <input type="hidden" name="button_subtype" value="services">
-                    <input type="hidden" name="no_note" value="0">
-                    <input type="hidden" name="tax_rate" value="0.000">
-                    <input type="hidden" name="shipping" value="<?php echo $envio_todo ?>">
-                    <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHostedGuest">
-                    <input type="image" src="https://www.paypalobjects.com/es_XC/MX/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal, la forma más segura y rápida de pagar en línea.">
-                    <img alt="" border="0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1">
-                  </form>   
-                       
-                       </div>
-                      
-                       
-                  </div>
-                  <?php
-                  }
-                  
-                ?>
+
+        <div class=&quot;container&quot;>
+            <h2><span>Genial!</span><br>Quiataste el articulo con exito</h2>
+            <p>Para regresar presiona el boton</p>
+            <a  align="center" href="carrito.php">Presiona Aqui Para Seguir Comprando</a>
+        </div>
         </div>
 
         <footer class="android-footer mdl-mega-footer">
