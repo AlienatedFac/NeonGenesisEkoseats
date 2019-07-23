@@ -1,23 +1,14 @@
+<?php 
+  session_start();
+?>
 <!doctype html>
 <html lang="es">
-<?php
-session_start();
-//Obterner las variable
-$id_user;
-$id_user=1;
-$valor=($_GET['valor']);
-require 'php/conexion.php';
-$consulta = $mysqli->query("SELECT * FROM productos WHERE id_producto = ".$valor);
-$resultado = mysqli_fetch_array($consulta);
-
-// Mostar las variables
-?>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Ejemplo de Material Design">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><?php echo $resultado['nombre_producto']; ?></title>
+    <title>EkoSeats</title>
 
     <!-- Estilos -->
     <script
@@ -37,10 +28,8 @@ $resultado = mysqli_fetch_array($consulta);
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/material.min.css">
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" type="text/css" href="css/detalles.css">
     
   </head>
-    
    <!-- WhatsHelp.io widget -->
 <script type="text/javascript">
     (function () {
@@ -75,9 +64,6 @@ $resultado = mysqli_fetch_array($consulta);
           </span>
           <!-- Agregamos un espacio entre el logo de y el menú -->
           <div class="android-header-spacer mdl-layout-spacer"></div>
-          <div class="android-search-box mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right mdl-textfield--full-width">
-            <a href="carrito.php" title=""><i class="fas fa-shopping-cart" style="color: green; font-size: 2em;"></i></a>
-          </div>
           <!-- Menú -->
           <div class="android-navigation-container">
             <nav class="android-navigation mdl-navigation">
@@ -125,16 +111,16 @@ $resultado = mysqli_fetch_array($consulta);
          <img class="android-logo-image" src="images/500x125.png">
         </span>
           <form action="catalogo.php" method="POST">
-         <nav class="mdl-navigation">
+        <nav class="mdl-navigation">
         <span class="mdl-navigation__link" href="">MUEBLES</span>
 <!-- ?php $catalogo1 = "Salas";?>-->
          <?php $catalogo1 = "Salas";?> <a class="mdl-navigation__link" href="catalogo.php?catalogo1=<?php echo $catalogo1 ?>">Salas</a>
          <?php $catalogo1 = "Sillas";?> <a class="mdl-navigation__link" href="catalogo.php?catalogo1=<?php echo $catalogo1 ?>">Sillas</a>
          <?php $catalogo1 = "Centros";?> <a class="mdl-navigation__link" href="catalogo.php?catalogo1=<?php echo $catalogo1 ?>">Centro de Sala</a>
-             <?php $catalogo1 = "Mesas";?> <a class="mdl-navigation__link" href="catalogo.php?catalogo1=<?php echo $catalogo1 ?>">Mesas</a>
+            <?php $catalogo1 = "Mesas";?> <a class="mdl-navigation__link" href="catalogo.php?catalogo1=<?php echo $catalogo1 ?>">Mesas</a>
         <span class="mdl-navigation__link" href="">ACCESORIOS</span>    
         <?php $catalogo1 = "Accesorios";?> <a class="mdl-navigation__link" href="catalogo.php?catalogo1=<?php echo $catalogo1 ?>">Accesorios</a>
-          <span class="mdl-navigation__link" href="">EKOSEATS</span>    
+        <span class="mdl-navigation__link" href="">EKOSEATS</span>    
           <a class="mdl-navigation__link" href="index.php">Home</a>
           <a class="mdl-navigation__link" href="login.php">Login</a>
           <a class="mdl-navigation__link" href="quienes_somos.php">Conocenos</a>
@@ -165,116 +151,20 @@ $resultado = mysqli_fetch_array($consulta);
       </div>
 
       <div class="android-content mdl-layout__content">
-        <a name="top"></a>
-        <div class="android-wear-section">
-          <div style="width: 100%;height: 100%; text-align: center;">
-            <div id="particles-js"></div>
-            <img src='<?php echo $resultado['imagenes'] ?>' id="imagen" style="width: auto;height: 80%;">
-          </div>
-          <div class="android-wear-band">
-            <div class="android-wear-band-text">
-              <div class="mdl-typography--display-2 mdl-typography--font-thin"><?php echo $resultado['nombre_producto'] ?></div>
-              <p class="mdl-typography--headline mdl-typography--font-thin">
-              <?php echo $resultado['descripcion_producto'] ?>
-              </p>
-            <?php 
-                $tipo= $resultado['tipo_producto'];
-                $envio;
-                if ($resultado['precio_producto']>=2500){
-                  $envio=0;
-                  $datoenvio="Gratis";    
-                }
-                else{
-                    if ($resultado['nombre_producto']>="test"){
-                  $envio=0;
-                  $datoenvio="Gratis";    
-                }else{
-                     $envio=200;
-                  $datoenvio="$200";   
-                    }
-                  
-                }
-            ?>
-            <div class="mdl-typography--display-2 mdl-typography--font-thin">$ <?php echo $resultado['precio_producto'] ?>    </div>
-              <p class="mdl-typography--headline mdl-typography--font-thin">
-              Envio: <?php echo $datoenvio ?>
-              </p>
-              <p>
-                <a class="mdl-typography--font-regular mdl-typography--text-uppercase android-alt-link" onclick="myFunction()" href="">
-                  Agregar al Carrito&nbsp;<i class="material-icons">chevron_right</i>
-                </a>
-                  
-                
-              </p>
-           <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_xclick">
-<input type="hidden" name="business" value="oppaiskoibito@gmail.com">
-<input type="hidden" name="lc" value="MX">
-<input type="hidden" name="item_name" value="<?php echo $resultado['nombre_producto'] ?>">
-<input type="hidden" name="item_number" value="<?php echo $resultado['id_producto'] ?>">
-<input type="hidden" name="amount" value="<?php echo $resultado['precio_producto'] ?>.00">
-<input type="hidden" name="currency_code" value="MXN">
-<input type="hidden" name="button_subtype" value="services">
-<input type="hidden" name="no_note" value="1">
-<input type="hidden" name="no_shipping" value="2">
-<input type="hidden" name="undefined_quantity" value="1">
-<input type="hidden" name="rm" value="1">
-<input type="hidden" name="return" value="http://127.0.0.1/NeonGenesisEkoseats/sucess.php">
-<input type="hidden" name="cancel_return" value="http://127.0.0.1/NeonGenesisEkoseats/cancel.php">
-<input type="hidden" name="shipping" value="<?php echo $envio ?>">
-<input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHosted">
-<input type="image" src="https://www.paypalobjects.com/es_XC/MX/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal, la forma más segura y rápida de pagar en línea.">
-<img alt="" border="0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1">
-</form>
-            </div>
-          </div>
-        </div>
-        <div style="background-color: white;">
-        <div class="android-more-section" style="background-color: white;">
+        <a name="top"></a>       
+        <div class="android-more-section">
             
-     <!--Aqui Iran las recientes de Ekoseats-->
-          <div class="android-section-title mdl-typography--display-1-color-contrast">Relacionados</div>
-          <div class="android-card-container mdl-grid">
-                 <?php
-                    require 'php/conexion.php';
-                    $consulta = $mysqli->query("SELECT * FROM productos WHERE tipo_producto= $tipo ORDER BY id_producto DESC");
-                    $cont = 0;
-                    while($resultado = mysqli_fetch_assoc($consulta)){
-                    ?>
-                        <div class='mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp'>
-                            <div class='mdl-card__media'>
-                              <img src='<?php echo $resultado['imagenes'] ?>' height="200" width="180">
-                            </div>
-                            <div class='mdl-card__title'>
-                              <h4 class='mdl-card__title-text'><?php echo $resultado['nombre_producto'] ?></h4>
-                                
-                            </div>
-                            <div class='mdl-card__supporting-text'>
-                            </div>
-                            <div class='mdl-card__actions'>
-                              <i class="fas fa-cart-plus" style="font-size: 2em; color: green;"></i>
-                              <a class='android-link mdl-button mdl-js-button mdl-typography--text-uppercase' href='detalles.php?valor= <?php echo $resultado['id_producto'] ?>'>Ver mas
-                              </a>
-                            </div>
-                          </div>             
-                  <?php
-                      if($cont == 3){
-                        break;
-                      }
-                      $cont++;
-                    }      
-                  ?>  
-          </div>
+
+        <div class=&quot;container&quot;>
+            <h2><span>Genial!</span><br>Tu compra se ha realizado con exito</h2>
+            <p>Tu producto sera enviado lo mas pronto posible a la direccion seleccionada</p>
+            <a  align="center" href="index.php">Presiona Aqui Para Seguir Comprando</a>
         </div>
-      </div>
+        </div>
+
         <footer class="android-footer mdl-mega-footer">
           <div class="mdl-mega-footer--top-section">
             <div class="mdl-mega-footer--left-section">
-              <!--<button class="mdl-mega-footer--social-btn">G +</button>
-              &nbsp;
-              <button class="mdl-mega-footer--social-btn">F</button>
-              &nbsp;
-              <button class="mdl-mega-footer--social-btn">T</button>-->
             </div>
             <div class="mdl-mega-footer--right-section">
               <a class="mdl-typography--font-light" href="#top">
@@ -299,13 +189,6 @@ $resultado = mysqli_fetch_array($consulta);
     </div>
  
     <script src="js/material.min.js"></script>
-    <script src="js/particles.js"></script>
-    <script src="js/particulas.js"></script>
-    <script>
-      function myFunction() {
-        alert("Hello! I am an alert box!");
-      }
-    </script>
 
 
   </body>
