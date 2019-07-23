@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Ejemplo de Material Design">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>EkoSeats</title>
+    <title>Subir Producto</title>
 
     <!-- Estilos -->
     <script
@@ -16,19 +16,18 @@
     integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"></script>
     <!-- Latest compiled and minified CSS -->
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=es" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/2cf79d88f0.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/material.min.css">
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" type="text/css" href="css/dashboard.css"> 
 
 
     <!-- alertify -->
@@ -49,8 +48,6 @@
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.4/build/css/themes/semantic.rtl.min.css"/>
     <!-- Bootstrap theme -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.4/build/css/themes/bootstrap.rtl.min.css"/>
-    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
-    <script type="text/javascript" src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     
   </head>
    <!-- WhatsHelp.io widget -->
@@ -134,7 +131,7 @@
 
       <div class="android-drawer mdl-layout__drawer">
         <span class="mdl-layout-title">
-          <!-- <img class="android-logo-image" src="images/android-logo-white.png"> -->
+          <img class="android-logo-image" src="images/500x125.png">
         </span>
           <form action="catalogo.php" method="POST">
         <nav class="mdl-navigation">
@@ -171,36 +168,93 @@
         </form>
       </div>
 
-      <div class="android-content mdl-layout__content" style="min-width: 100%;">
-        
-        <div class="d-flex" id="wrapper">
-
-          <!-- Sidebar -->
-          <div class="bg-light border-right" id="sidebar-wrapper">
-            <div class="sidebar-heading">
-              <img src="<?php echo $_SESSION['imagen'] ?>" alt="" style="width: 200px;">
+      <div class="android-content mdl-layout__content">
+        <h1>Subir Producto</h1>
+        <form style="padding: 0px;" action="php/subir_producto.php" method="post" enctype="multipart/form-data">
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                 <label style="font-size: 20px; ">Nombre:</label>
+                 <input type="text" name="nombre" value="" placeholder="Nombre" class="form-control" style="width: 50%; ">
+                </div>
+                <div class="form-group">
+                 <label style="font-size: 20px;">Stock:</label>
+                 <input type="number" name="stock" value="" placeholder="Stock" class="form-control" style="width: 50%; ">
+                </div>
+              </div>
             </div>
-            <div class="list-group list-group-flush">
-              <a href="dashboard.php" class="list-group-item list-group-item-action bg-light" id="menu">Menu</a>
-              <a href="dashboardProductos.php" class="list-group-item list-group-item-action bg-light" id="productos">Productos</a>
-              <a href="#" class="list-group-item list-group-item-action bg-light" id="compras">Compras</a>
-              <a href="#" class="list-group-item list-group-item-action bg-light" id="chats">Chats</a>
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                <label style="font-size: 20px;">Descripción:</label>
+                <input type="text" name="descripcion" value="" placeholder="Descripción" class="form-control" style="width: 50%; ">
+              </div>
+              <div class="form-group">
+                <label style="font-size: 20px;">Precio:</label>
+                <input type="number" name="precio" value="" placeholder="Precio" class="form-control" style="width: 50%; ">
+              </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label style="font-size: 20px; ">Imagen:</label>
+                  <input type="file" name="file">
+                </div>
+                <div class="form-group">
+                  <label style="font-size: 20px; ">Tipo:</label>
+                  <select class="form-control" style="width: 50%;" name="tipo_select">
+                  <?php 
+                    require 'php/conexion.php';
+                    $consulta = $mysqli->query("SELECT * FROM tipo");
+                      while($resultado = mysqli_fetch_assoc($consulta)){
+                      ?>
+                        <option value="<?php echo $resultado['id_tipo']; ?>"><?php echo $resultado['tipo']; ?></option>
+                      <?php
+                      }       
+                  ?>    
+                </select>
+                </div>
+              </div>
             </div>
           </div>
-          <!-- /#sidebar-wrapper -->
-
-          <!-- Page Content -->
-          <div id="page-content-wrapper">
-            <div class="container-fluid">
-              <div id="contenido"></div>
+          <div class="form-group">
+            <input type="submit" class="btn btn-success" name="accion" value="Agregar" style="">
+          </div>
+        </form>
+        <footer class="android-footer mdl-mega-footer">
+          <div class="mdl-mega-footer--top-section">
+            <div class="mdl-mega-footer--left-section">
+              <!--<button class="mdl-mega-footer--social-btn">G +</button>
+              &nbsp;
+              <button class="mdl-mega-footer--social-btn">F</button>
+              &nbsp;
+              <button class="mdl-mega-footer--social-btn">T</button>-->
+            </div>
+            <div class="mdl-mega-footer--right-section">
+              <a class="mdl-typography--font-light" href="#top">
+                Inicio
+                <i class="material-icons">expand_less</i>
+              </a>
             </div>
           </div>
-          <!-- /#page-content-wrapper -->
 
-        </div>
+          <div class="mdl-mega-footer--middle-section">
+            <p class="mdl-typography--font-light">EkoSeats S.A de C.V</p>
+            <p class="mdl-typography--font-light">Universidad Politecnica de Quintana Roo</p>
+          </div>
+
+          <div class="mdl-mega-footer--bottom-section">
+            <a class="android-link mdl-typography--font-light" href="">Blog</a>
+            <a class="android-link mdl-typography--font-light" href="">Política de Privacidad</a>
+          </div>
+
+        </footer>
       </div>
     </div>
-</body>
+
+    </body>
     <script src="js/material.min.js"></script>
-    <script src="js/dashboard.js"></script>
+    <script src="js/mas_recientes.js"></script>
 </html>

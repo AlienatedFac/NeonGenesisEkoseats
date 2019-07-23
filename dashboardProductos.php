@@ -15,6 +15,8 @@
     src="https://code.jquery.com/jquery-3.4.1.js"
     integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <script type="text/javascript" src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <!-- Latest compiled and minified CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
@@ -49,8 +51,6 @@
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.4/build/css/themes/semantic.rtl.min.css"/>
     <!-- Bootstrap theme -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.4/build/css/themes/bootstrap.rtl.min.css"/>
-    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
-    <script type="text/javascript" src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     
   </head>
    <!-- WhatsHelp.io widget -->
@@ -181,10 +181,10 @@
               <img src="<?php echo $_SESSION['imagen'] ?>" alt="" style="width: 200px;">
             </div>
             <div class="list-group list-group-flush">
-              <a href="dashboard.php" class="list-group-item list-group-item-action bg-light" id="menu">Menu</a>
+              <!-- <a href="dashboard.php" class="list-group-item list-group-item-action bg-light" id="menu">Menu</a> -->
               <a href="dashboardProductos.php" class="list-group-item list-group-item-action bg-light" id="productos">Productos</a>
-              <a href="#" class="list-group-item list-group-item-action bg-light" id="compras">Compras</a>
-              <a href="#" class="list-group-item list-group-item-action bg-light" id="chats">Chats</a>
+              <!-- <a href="#" class="list-group-item list-group-item-action bg-light" id="compras">Compras</a>
+              <a href="#" class="list-group-item list-group-item-action bg-light" id="chats">Chats</a> -->
             </div>
           </div>
           <!-- /#sidebar-wrapper -->
@@ -192,7 +192,13 @@
           <!-- Page Content -->
           <div id="page-content-wrapper">
             <div class="container-fluid">
-              <div id="contenido"></div>
+              <div class="container">
+                <div class="row">
+                  <div class="col">
+                    <div id="tablaProductos"></div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <!-- /#page-content-wrapper -->
@@ -202,5 +208,5 @@
     </div>
 </body>
     <script src="js/material.min.js"></script>
-    <script src="js/dashboard.js"></script>
+    <script src="js/dashboard_productos.js"></script>
 </html>
