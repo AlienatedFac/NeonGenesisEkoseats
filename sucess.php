@@ -1,5 +1,14 @@
 <?php 
   session_start();
+  $valor=$_GET['valor'];
+  $valor1=$_GET['valor1'];
+  $hora = date('m/d/Y g:ia');
+	require 'php/conexion.php';
+
+	$sql="INSERT INTO compras(id_usuario,id_producto,hora)  
+    values('$valor1','$valor','$hora')";
+
+	$mysqli->query($sql);
 ?>
 <!doctype html>
 <html lang="es">
@@ -159,6 +168,7 @@
             <h2><span>Genial!</span><br>Tu compra se ha realizado con exito</h2>
             <p>Tu producto sera enviado lo mas pronto posible a la direccion seleccionada</p>
             <a  align="center" href="index.php">Presiona Aqui Para Seguir Comprando</a>
+            <a  align="center"><?php echo $valor ?></a>
         </div>
         </div>
 

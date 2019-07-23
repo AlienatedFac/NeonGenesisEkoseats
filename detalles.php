@@ -14,6 +14,8 @@ $id=$resultado['id_usuario'];
 // Mostar las variables
 ?>
   <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Ejemplo de Material Design">
@@ -220,7 +222,7 @@ $id=$resultado['id_usuario'];
 <input type="hidden" name="no_shipping" value="2">
 <input type="hidden" name="undefined_quantity" value="1">
 <input type="hidden" name="rm" value="1">
-<input type="hidden" name="return" value="http://127.0.0.1/NeonGenesisEkoseats/sucess.php">
+<input type="hidden" name="return" value="http://127.0.0.1/NeonGenesisEkoseats/sucess.php?valor=<?php echo $resultado['id_producto'] ?>&valor1=<?php echo $_SESSION['id_usuario'] ?>">
 <input type="hidden" name="cancel_return" value="http://127.0.0.1/NeonGenesisEkoseats/cancel.php">
 <input type="hidden" name="shipping" value="<?php echo $envio ?>">
 <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHosted">
