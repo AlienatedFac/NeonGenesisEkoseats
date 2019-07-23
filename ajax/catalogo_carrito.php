@@ -11,11 +11,15 @@
       
       if ($nombre_seccion == "Salas") {
           $tipo=1;
-      } elseif ($nombre_seccion == "Comedores") {
+      } elseif ($nombre_seccion == "Sillas") {
           $tipo=2;
-      } elseif ($nombre_seccion=="Otros") {
+      } elseif ($nombre_seccion=="Centros") {
           $tipo=3;
-      } 
+      }elseif ($nombre_seccion=="Mesas") {
+          $tipo=4;
+      }elseif ($nombre_seccion=="Accesorios") {
+          $tipo=5;
+      }
 ?>
     <div class="android-more-section">
           <div class="android-section-title" style="color: black; font-size: 40px;"><?php echo $nombre_seccion; ?></div>
@@ -33,7 +37,7 @@
                     ?>
                           <div class='mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp'>
                             <div class='mdl-card__media'>
-                              <img src='<?php echo $resultado['imagenes'] ?>'>
+                              <img src='<?php echo $resultado['imagenes'] ?>' height="200" width="180">
                             </div>
                             <div class='mdl-card__title'>
                               <h4 class='mdl-card__title-text'><?php echo $resultado['nombre_producto'] ?></h4>

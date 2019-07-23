@@ -125,18 +125,26 @@ $resultado = mysqli_fetch_array($consulta);
          <img class="android-logo-image" src="images/500x125.png">
         </span>
           <form action="catalogo.php" method="POST">
-        <nav class="mdl-navigation">
+         <nav class="mdl-navigation">
         <span class="mdl-navigation__link" href="">MUEBLES</span>
 <!-- ?php $catalogo1 = "Salas";?>-->
          <?php $catalogo1 = "Salas";?> <a class="mdl-navigation__link" href="catalogo.php?catalogo1=<?php echo $catalogo1 ?>">Salas</a>
-         <?php $catalogo1 = "Comedores";?> <a class="mdl-navigation__link" href="catalogo.php?catalogo1=<?php echo $catalogo1 ?>">Comedores</a>
-         <?php $catalogo1 = "Otros";?> <a class="mdl-navigation__link" href="catalogo.php?catalogo1=<?php echo $catalogo1 ?>">Otros</a>
+         <?php $catalogo1 = "Sillas";?> <a class="mdl-navigation__link" href="catalogo.php?catalogo1=<?php echo $catalogo1 ?>">Sillas</a>
+         <?php $catalogo1 = "Centros";?> <a class="mdl-navigation__link" href="catalogo.php?catalogo1=<?php echo $catalogo1 ?>">Centro de Sala</a>
+             <?php $catalogo1 = "Mesas";?> <a class="mdl-navigation__link" href="catalogo.php?catalogo1=<?php echo $catalogo1 ?>">Mesas</a>
         <span class="mdl-navigation__link" href="">ACCESORIOS</span>    
-          <a class="mdl-navigation__link" href=""></a>
-          <a class="mdl-navigation__link" href=""></a>
-        <span class="mdl-navigation__link" href="">CONSUMIBLES</span>    
-          <a class="mdl-navigation__link" href=""></a>
-          <a class="mdl-navigation__link" href=""></a>
+        <?php $catalogo1 = "Accesorios";?> <a class="mdl-navigation__link" href="catalogo.php?catalogo1=<?php echo $catalogo1 ?>">Accesorios</a>
+          <span class="mdl-navigation__link" href="">EKOSEATS</span>    
+          <a class="mdl-navigation__link" href="index.php">Home</a>
+          <a class="mdl-navigation__link" href="login.php">Login</a>
+          <a class="mdl-navigation__link" href="quienes_somos.php">Conocenos</a>
+          <div class="android-drawer-separator"></div>
+     <span class="mdl-navigation__link" href="">Recursos</span>
+          <a class="mdl-navigation__link" href="">Blog Oficial</a>
+          <a class="mdl-navigation__link" href="">Ekoseats en Google+</a>
+          <a class="mdl-navigation__link" href="">Ekoseats en Twitter</a>
+          <a class="mdl-navigation__link" href="">Ekoseats en Facebook</a>
+     
           <div class="android-drawer-separator"></div>
             
           <!-- <span class="mdl-navigation__link" href="">Versiones</span>
@@ -145,15 +153,12 @@ $resultado = mysqli_fetch_array($consulta);
           <a class="mdl-navigation__link" href="">Jelly Bean 4.3</a>
           <a class="mdl-navigation__link" href="">Historia de Android</a>
           <div class="android-drawer-separator"></div>
-          <span class="mdl-navigation__link" href="">Recursos</span>
-          <a class="mdl-navigation__link" href="">Blog Oficial</a>
-          <a class="mdl-navigation__link" href="">Android en Google+</a>
-          <a class="mdl-navigation__link" href="">Android en Twitter</a>
-          <div class="android-drawer-separator"></div>
+          
           <span class="mdl-navigation__link" href="">Para Desarrolladores</span>
           <a class="mdl-navigation__link" href="">Recursos para desarrollo de Apps</a>
           <a class="mdl-navigation__link" href="">Android Proyecto Open Source</a>
           <a class="mdl-navigation__link" href="">Android SDK</a> -->
+     
             
         </nav>
         </form>
@@ -195,22 +200,26 @@ $resultado = mysqli_fetch_array($consulta);
                   
                 
               </p>
-            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-              <input type="hidden" name="cmd" value="_xclick">
-              <input type="hidden" name="business" value="substratum21@gmail.com">
-              <input type="hidden" name="lc" value="MX">
-              <input type="hidden" name="item_name" value="<?php echo $resultado['nombre_producto'] ?>">
-              <input type="hidden" name="item_number" value="Id">
-              <input type="hidden" name="amount" value="<?php echo $resultado['precio_producto'] ?>.00">
-              <input type="hidden" name="currency_code" value="MXN">
-              <input type="hidden" name="button_subtype" value="services">
-              <input type="hidden" name="no_note" value="0">
-              <input type="hidden" name="tax_rate" value="0.000">
-              <input type="hidden" name="shipping" value="<?php echo $envio ?>">
-              <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHostedGuest">
-              <input type="image" src="https://www.paypalobjects.com/es_XC/MX/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal, la forma más segura y rápida de pagar en línea.">
-              <img alt="" border="0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1">
-            </form>
+           <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_xclick">
+<input type="hidden" name="business" value="oppaiskoibito@gmail.com">
+<input type="hidden" name="lc" value="MX">
+<input type="hidden" name="item_name" value="<?php echo $resultado['nombre_producto'] ?>">
+<input type="hidden" name="item_number" value="<?php echo $resultado['id_producto'] ?>">
+<input type="hidden" name="amount" value="<?php echo $resultado['precio_producto'] ?>.00">
+<input type="hidden" name="currency_code" value="MXN">
+<input type="hidden" name="button_subtype" value="services">
+<input type="hidden" name="no_note" value="1">
+<input type="hidden" name="no_shipping" value="2">
+<input type="hidden" name="undefined_quantity" value="1">
+<input type="hidden" name="rm" value="1">
+<input type="hidden" name="return" value="http://127.0.0.1/NeonGenesisEkoseats/sucess.php">
+<input type="hidden" name="cancel_return" value="http://127.0.0.1/NeonGenesisEkoseats/cancel.php">
+<input type="hidden" name="shipping" value="<?php echo $envio ?>">
+<input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHosted">
+<input type="image" src="https://www.paypalobjects.com/es_XC/MX/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal, la forma más segura y rápida de pagar en línea.">
+<img alt="" border="0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1">
+</form>
             </div>
           </div>
         </div>
@@ -239,7 +248,7 @@ $resultado = mysqli_fetch_array($consulta);
                     ?>
                         <div class='mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp'>
                             <div class='mdl-card__media'>
-                              <img src='<?php echo $resultado['imagenes'] ?>'>
+                              <img src='<?php echo $resultado['imagenes'] ?>' height="200" width="180">
                             </div>
                             <div class='mdl-card__title'>
                               <h4 class='mdl-card__title-text'><?php echo $resultado['nombre_producto'] ?></h4>

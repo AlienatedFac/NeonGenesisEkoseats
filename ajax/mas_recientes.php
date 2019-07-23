@@ -14,7 +14,7 @@
                     ?>
                           <div class='mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp'>
                             <div class='mdl-card__media'>
-                              <img src='<?php echo $resultado['imagenes'] ?>'>
+                              <img src='<?php echo $resultado['imagenes'] ?>' height="200" width="180">
                             </div>
                             <div class='mdl-card__title'>
                               <h4 class='mdl-card__title-text'><?php echo $resultado['nombre_producto'] ?></h4>
