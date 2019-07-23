@@ -96,7 +96,7 @@ $resultado = mysqli_fetch_array($consulta);
                   <?php echo $_SESSION['nombre_usuario']; ?>
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="#">Dashboard</a><br>
+                  <a class="dropdown-item" href="dashboard.php">Dashboard</a><br>
                   <a class="dropdown-item" href="php/cerrar_sesion.php">Cerrar Sesion</a>
                 </div>
               </div>

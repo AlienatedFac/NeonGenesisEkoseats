@@ -1,5 +1,16 @@
 <?php 
 	session_start();
+  require 'php/conexion.php';
+    $consulta = $mysqli->query("SELECT * FROM usuarios WHERE id_usuario=".$_SESSION['id_usuario']);
+    $resultado = mysqli_fetch_assoc($consulta);
+
+  require 'php/conexion.php';
+    $consulta2 = $mysqli->query("SELECT count(*) as num FROM productos WHERE id_usuario=".$_SESSION['id_usuario']);
+    $resultado2 = mysqli_fetch_assoc($consulta2);
+
+  require 'php/conexion.php';
+    $consulta3 = $mysqli->query("SELECT count(*) as num FROM compras WHERE id_usuario=".$_SESSION['id_usuario']);
+    $resultado3 = mysqli_fetch_assoc($consulta3);
  ?>
 <!doctype html>
 <html lang="es">
@@ -108,7 +119,7 @@
                   <?php echo $_SESSION['nombre_usuario']; ?>
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="#">Dashboard</a><br>
+                  <a class="dropdown-item" href="dashboard.php">Dashboard</a><br>
                   <a class="dropdown-item" href="php/cerrar_sesion.php">Cerrar Sesion</a>
                 </div>
               </div>
@@ -182,14 +193,13 @@
 
           <!-- Sidebar -->
           <div class="bg-light border-right" id="sidebar-wrapper">
-            <div class="sidebar-heading">
-              <img src="<?php echo $_SESSION['imagen'] ?>" alt="" style="width: 200px;">
+            <div class="sidebar-heading" style="text-align: center;">
+              <i class="fas fa-user" style="font-size: 150px;"></i>
             </div>
             <div class="list-group list-group-flush">
               <a href="dashboard.php" class="list-group-item list-group-item-action bg-light" id="menu">Menu</a>
               <a href="dashboardProductos.php" class="list-group-item list-group-item-action bg-light" id="productos">Productos</a>
-              <a href="#" class="list-group-item list-group-item-action bg-light" id="compras">Compras</a>
-              <a href="#" class="list-group-item list-group-item-action bg-light" id="chats">Chats</a>
+              <a href="dashboardCompras.php" class="list-group-item list-group-item-action bg-light" id="compras">Compras</a>
             </div>
           </div>
           <!-- /#sidebar-wrapper -->
@@ -197,7 +207,62 @@
           <!-- Page Content -->
           <div id="page-content-wrapper">
             <div class="container-fluid">
-              <div id="contenido"></div>
+              <br>
+              <div class="container">
+                <div class="row">
+                  <div class="col-4" style="text-align: center;">
+                    <i class="fas fa-user" style="font-size: 150px;"></i>
+                  </div>
+                  <div class="col-8">
+                    <form action="" method="post" enctype="multipart/form-data" style="text-align: left;">
+                      <input type="file" name="file">
+                    </form>
+                  </div>
+                </div>
+                <br><br>
+                <div class="row">
+                  <div class="col-4">
+                    <label style="font-size: 20px;">Nombres:</label>
+                    <input type="text" name="" value="<?php echo $resultado['nombre_usuario']; ?>" placeholder="" class="form-control">
+                  </div>
+                  <div class="col-8">
+                    <label style="font-size: 20px;">Apellidos:</label>
+                    <input type="text" name="" value="<?php echo $resultado['apellidos_usuario']; ?>" placeholder="" class="form-control">
+                  </div>
+                </div>
+                <br><br>
+                <div class="row">
+                  <div class="col-4">
+                    <label style="font-size: 20px;">Correo:</label>
+                    <input type="email" name="" value="<?php echo $resultado['correo_usuario']; ?>" placeholder="" class="form-control">
+                  </div>
+                  <div class="col-8">
+                    <label style="font-size: 20px;">Contraseña:</label>
+                    <input type="password" name="" value="<?php echo $resultado['clave_usuario']; ?>" placeholder="" class="form-control">
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col">
+                    <div class="card">
+                      <div class="card-body" style="text-align: center;">
+                        <h5 class="card-title">Productos Subidos</h5>
+                        <p class="card-text" style="font-size: 30px;"><?php echo $resultado2['num']; ?></p>
+                        <a href="dashboardProductos.php" class="btn btn-primary">Admnistrar Productos</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card">
+                      <div class="card-body" style="text-align: center;">
+                        <h5 class="card-title">Compras Realizadas</h5>
+                        <p class="card-text" style="font-size: 30px;"><?php echo $resultado3['num']; ?></p>
+                        <a href="dashboardCompras.php" class="btn btn-primary">Admnistrar Compras</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <!-- /#page-content-wrapper -->

@@ -201,6 +201,7 @@
                 <div class="form-group">
                   <label style="font-size: 20px; ">Imagen:</label>
                   <input type="file" name="file">
+                  <input type="submit" class="btn btn-success" name="accion" value="Agregar" style="position: absolute; right: 50%;">
                 </div>
                 <div class="form-group">
                   <label style="font-size: 20px; ">Tipo:</label>
@@ -218,9 +219,6 @@
                 </div>
               </div>
             </div>
-          </div>
-          <div class="form-group">
-            <input type="submit" class="btn btn-success" name="accion" value="Agregar" style="">
           </div>
         </form>
         <footer class="android-footer mdl-mega-footer">

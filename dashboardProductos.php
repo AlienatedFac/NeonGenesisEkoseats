@@ -108,7 +108,7 @@
                   <?php echo $_SESSION['nombre_usuario']; ?>
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="#">Dashboard</a><br>
+                  <a class="dropdown-item" href="dashboard.php">Dashboard</a><br>
                   <a class="dropdown-item" href="php/cerrar_sesion.php">Cerrar Sesion</a>
                 </div>
               </div>
@@ -177,14 +177,13 @@
 
           <!-- Sidebar -->
           <div class="bg-light border-right" id="sidebar-wrapper">
-            <div class="sidebar-heading">
-              <img src="<?php echo $_SESSION['imagen'] ?>" alt="" style="width: 200px;">
+            <div class="sidebar-heading" style="text-align: center;">
+              <i class="fas fa-user" style="font-size: 150px;"></i>
             </div>
             <div class="list-group list-group-flush">
-              <!-- <a href="dashboard.php" class="list-group-item list-group-item-action bg-light" id="menu">Menu</a> -->
+              <a href="dashboard.php" class="list-group-item list-group-item-action bg-light" id="menu">Menu</a>
               <a href="dashboardProductos.php" class="list-group-item list-group-item-action bg-light" id="productos">Productos</a>
-              <!-- <a href="#" class="list-group-item list-group-item-action bg-light" id="compras">Compras</a>
-              <a href="#" class="list-group-item list-group-item-action bg-light" id="chats">Chats</a> -->
+              <a href="dashboardCompras.php" class="list-group-item list-group-item-action bg-light" id="compras">Compras</a>
             </div>
           </div>
           <!-- /#sidebar-wrapper -->

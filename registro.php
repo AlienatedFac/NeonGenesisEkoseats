@@ -128,7 +128,7 @@
         <div class="card" id="tarjeta">
           <div class="card-body">
             <h5 class="card-title" style="text-align: center;">¡Unete a esta gran comunidad!</h5>
-            <form id="form_registro">
+            <form id="form_registro" method="post" enctype="multipart/form-data">
               <div class="row">
                 <div class="col">
                   <input type="text" name="input_nombre" id="nombre" class="form-control" required placeholder="Nombre(s)">
@@ -159,6 +159,7 @@
                   </div>
                 </div>
               </div>
+              <br>
               <br>
               <input type="submit" class="btn login_btn" value="Registrarse">
             </form>
